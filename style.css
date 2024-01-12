@@ -310,25 +310,17 @@ a.redirect-link:last-child {
     position: relative;
 }
 
+.redirect-icon{
+    position: absolute;
+    right: -5px;
+    top: 10px;
+    color: #00000090;
+    transition: transform .2s ease-in-out;
+}
+
 @media screen and (min-width: 1000px) {
-    .redirect-icon{
-        visibility: hidden;
-        position: absolute;
-        right: -5px;
-        top: 10px;
-        color: #00000090;
-        transition: transform .2s ease-in-out;
-    }
-
     .redirect-box:hover i.redirect-icon{
-        visibility: visible;
         transform: translate(7px, -13px);
-    }
-
-    @media screen and (max-width: 1000px) {
-        .redirect-icon{
-            display: none;
-        }
     }
 }
 
@@ -337,6 +329,19 @@ a.redirect-link:last-child {
         display: none;
     }
 }
+
+.redirect-text-icon {
+    display: none;
+    color: #dddddd;
+}
+
+@media screen and (max-width: 1000px) {
+    .redirect-text-icon {
+        margin-left: 15px;
+        display: inline;
+    }
+}
+
 /* End Redirect Icon */
 
 /* About Box */
@@ -427,6 +432,10 @@ a.redirect-link:last-child {
 }
 
 .experience-role{
+    text-align: left;
+}
+
+.full-resume{
     text-align: left;
 }
 
