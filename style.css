@@ -131,6 +131,7 @@ a {
     .box-title{
         background-color: rgb(47, 69, 92, .90);
         margin: 0;
+        padding: 0px;
         top: 0px;
         border: none;
         box-shadow: none;
