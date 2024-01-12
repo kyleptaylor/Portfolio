@@ -89,22 +89,22 @@ h2{
     font-size: 1.3em;
 }
 
-h2.box-title{
+.box-title{
     scroll-margin-top: 75px;
     z-index: 5;
-    margin: 20px 21px 0;
-    padding: 10px;
+    margin: 25px 21px 0;
     text-align: center;
     position: sticky;
     top: 75px;
-    background-color: rgb(47, 69, 92, 0.9);
+    background-color: rgb(47, 69, 92);
     border-radius: 5px;
     border: 1px solid #eeeeee;
-    box-shadow: #eeeeee 0px 0px 8px;
+    /* box-shadow: #eeeeee 0px 0px 8px; */
 }
 
 @media screen and (max-width: 1000px) {
-    h2.box-title{
+    .box-title{
+        background-color: rgb(47, 69, 92, .90);
         margin: 0;
         top: 0px;
         border: none;
@@ -212,6 +212,8 @@ a {
     }
 }
 
+/* Nav */
+
 .nav-box .nav-items{
     display: flex;
     flex-direction: row;
@@ -234,19 +236,45 @@ a {
 }
 
 .nav-box .nav-items .nav-item:hover{
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+.nav-box .nav-items .nav-about:hover{
     color: #34F5C5;
     border: 1px solid #34F5C5;
-    border-radius: 5px;
     box-shadow: #21D0B2 0px 0px 8px;
-    transform: scale(1.1);
+}
+
+.nav-box .nav-items .nav-experience:hover{
+    color: #1DCDFE;
+    border: 1px solid #1DCDFE;
+    box-shadow: #1DCDFE 0px 0px 8px;
+}
+
+.nav-box .nav-items .nav-projects:hover{
+    color: #C19DFF;
+    border: 1px solid #C19DFF;
+    box-shadow: #C19DFF 0px 0px 8px;
 }
 
 .nav-box .nav-items .nav-item i{
     visibility: hidden;
     position: absolute;
-    color: #34F5C5;
     transition: transform .2s ease-in-out;
     transform: rotate(-40deg);
+}
+
+.nav-item .nav-about i{
+    color: #34F5C5;
+}
+
+.nav-item .nav-experience i{
+    color: #1DCDFE;
+}
+
+.nav-item .nav-projects i{
+    color: #C19DFF;
 }
 
 .nav-box .nav-items .nav-item:hover i{
@@ -259,6 +287,8 @@ a {
         display: none;
     }
 }
+
+/* End Nav */
 
 /* Redirect Icon */
 
@@ -341,14 +371,14 @@ a.redirect-link:last-child {
     margin: 20px 20px 60px;
     display: flex;
     flex-direction: column;
-    border: 1px solid #34F5C5;
+    border: 1px solid #1DCDFE;
     border-radius: 5px;
-    box-shadow: #21D0B2 0px 0px 8px;
+    box-shadow: #1DCDFE 0px 0px 8px;
 }
 
 @media screen and (min-width: 1000px) {
     .experience-box:hover {
-        background-color: #34F5C515;
+        background-color: #1DCDFE15;
         transform: scale(1.03);
     }
 }
@@ -387,6 +417,7 @@ a.redirect-link:last-child {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding-bottom: 10px;
 }
 
@@ -431,14 +462,14 @@ a.redirect-link:last-child {
     margin: 20px 20px 60px;    
     display: flex;
     flex-direction: column;
-    border: 1px solid #34F5C5;
+    border: 1px solid #C19DFF;
     border-radius: 5px;
-    box-shadow: #21D0B2 0px 0px 8px;
+    box-shadow: #C19DFF 0px 0px 8px;
 }
 
 @media screen and (min-width: 1000px) {
     .project-box:hover {
-        background-color: #34F5C515;
+        background-color: #C19DFF15;
         transform: scale(1.03);
     }
 }

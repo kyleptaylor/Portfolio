@@ -9,8 +9,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        var target = this.getAttribute('href');
+        var targetElement = document.querySelector(target);
+
+        // Check if the target element exists
+        if (targetElement) {
+            // Reset scroll position
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+            // Scroll to the target element
+            targetElement.scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
     });
 });
