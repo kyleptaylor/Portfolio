@@ -460,6 +460,30 @@ a.redirect-link:last-child {
 
 /* End Experience Box */
 
+/* Skills */
+
+.skills{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    flex-wrap: wrap;
+}
+
+.skill{
+    background-color: #1DCDFE50;
+    border-radius: 25px;
+    padding: 5px 10px 3px;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.skill p{
+    line-height: 1;
+    font-size: .8em;
+}
+
+/* End Skills */
+
 /* Project Box */
 
 .project-box{
@@ -513,19 +537,27 @@ a.redirect-link:last-child {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .project-img{
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+    .project-img{
+        width: 90px;
+        height: 90px;
+    }
 }
 
 .project-info{
     display: flex;
     flex-direction: column;
-    padding-left: 20px;
+    padding-left: 15px;
 }
 
 .project-title{
