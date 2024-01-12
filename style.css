@@ -89,29 +89,6 @@ h2{
     font-size: 1.3em;
 }
 
-.box-title{
-    scroll-margin-top: 75px;
-    z-index: 5;
-    margin: 25px 21px 0;
-    text-align: center;
-    position: sticky;
-    top: 75px;
-    background-color: rgb(47, 69, 92);
-    border-radius: 5px;
-    border: 1px solid #eeeeee;
-    /* box-shadow: #eeeeee 0px 0px 8px; */
-}
-
-@media screen and (max-width: 1000px) {
-    .box-title{
-        background-color: rgb(47, 69, 92, .90);
-        margin: 0;
-        top: 0px;
-        border: none;
-        box-shadow: none;
-    }
-}
-
 h3{
     font-family: 'Varela Round', 'Heebo', sans-serif;
     margin: 0px;
@@ -131,6 +108,33 @@ p{
 
 a {
     text-decoration: none;
+}
+
+.box-title{
+    scroll-margin-top: 75px;
+    z-index: 5;
+    margin: 25px 21px 0;
+    text-align: center;
+    position: sticky;
+    top: 75px;
+    background-color: rgb(47, 69, 92);
+    border-radius: 5px;
+    border: 1px solid #eeeeee;
+    /* box-shadow: #eeeeee 0px 0px 8px; */
+}
+
+.box-title h2 {
+    text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .box-title{
+        background-color: rgb(47, 69, 92, .90);
+        margin: 0;
+        top: 0px;
+        border: none;
+        box-shadow: none;
+    }
 }
 
 .social-icons{
