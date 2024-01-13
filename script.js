@@ -1,29 +1,29 @@
-const cursor = document.querySelector('.custom-cursor'); 
- 
-document.addEventListener('mousemove', (e) => { 
-    cursor.style.left = e.clientX + 'px'; 
-    cursor.style.top = e.clientY + 'px'; 
-}); 
+const cursor = document.querySelector(".custom-cursor");
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
 
-        var target = this.getAttribute('href');
-        var targetElement = document.querySelector(target);
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
 
-        // Check if the target element exists
-        if (targetElement) {
-            // Reset scroll position
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+    var target = this.getAttribute("href");
+    var targetElement = document.querySelector(target);
 
-            // Scroll to the target element
-            targetElement.scrollIntoView({
-                behavior: 'smooth'
-            });
-        }
-    });
+    // Check if the target element exists
+    if (targetElement) {
+      // Reset scroll position
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+      // Scroll to the target element
+      targetElement.scrollIntoView({
+        behavior: "smooth",
+      });
+    }
+  });
 });
