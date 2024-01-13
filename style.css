@@ -357,8 +357,10 @@ a.redirect-link:last-child {
     padding: 40px;
     margin: 20px 20px 60px;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
     border: 1px solid #34F5C5;
     border-radius: 5px;
     box-shadow: #21D0B2 0px 0px 8px;
@@ -391,12 +393,6 @@ a.redirect-link:last-child {
 @media screen and (max-width: 1000px) {
     .brain-img-box{
         margin: 100px auto 0px;
-    }
-}
-
-@media screen and (max-height: 600px) {
-    .brain-img-box{
-        display: none;
     }
 }
 
