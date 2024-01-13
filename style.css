@@ -337,7 +337,8 @@ a.redirect-link:last-child {
 
 @media screen and (max-width: 1000px) {
     .redirect-text-icon {
-        margin-left: 15px;
+        margin-left: 8px;
+
         display: inline;
     }
 }
@@ -489,6 +490,7 @@ a.redirect-link:last-child {
 .skill p{
     line-height: 1;
     font-size: .8em;
+    color: #eeeeee;
 }
 
 /* End Skills */
@@ -553,7 +555,7 @@ a.redirect-link:last-child {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 1000px) {
