@@ -129,6 +129,7 @@ a {
 
 @media screen and (max-width: 1000px) {
     .box-title{
+        scroll-margin-top: 0px;
         background-color: rgb(47, 69, 92);
         margin: 0;
         padding: 0px;
@@ -348,10 +349,12 @@ a.redirect-link:last-child {
 /* About Box */
 
 .about-box{
+    height: calc(80vh - 66px);
     padding: 40px;
     margin: 20px 20px 60px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     border: 1px solid #34F5C5;
     border-radius: 5px;
     box-shadow: #21D0B2 0px 0px 8px;
@@ -372,6 +375,179 @@ a.redirect-link:last-child {
         margin: 20px;
     }
 }
+
+.brain-img-box{
+    margin: 0px auto -10px;
+    width: 80%;
+    max-width: 450px;
+    max-height: auto;
+    position: relative;
+}
+
+@media screen and (max-width: 1000px) {
+    .brain-img-box{
+        margin: 100px auto 0px;
+    }
+}
+
+@media screen and (max-height: 600px) {
+    .brain-img-box{
+        display: none;
+    }
+}
+
+.brain-img{
+    width: 100%;
+}
+
+    /* /// Animation /// */
+
+    .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9, .logo10 {
+        z-index: -1;
+        opacity: 0;
+        width: 10px;
+        height: 10px;
+        font-size: 1.5em;
+        position: absolute;
+        animation-iteration-count: 3;
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    }
+
+    @media screen and (max-width: 1000px) {
+            .logo1, .logo2, .logo3, .logo4, .logo5, .logo6, .logo7, .logo8, .logo9, .logo10 {
+                animation-iteration-count: 1;
+            }
+    }
+
+    /* /// Left Brain /// */
+
+    .logo1, .logo2, .logo3, .logo4, .logo5 {
+        color: #34F5C5;
+        text-shadow: #21D0B2 0px 0px 8px;
+    }
+
+    .about-box:hover .logo1{
+        animation-name: logo1;
+        animation-duration: 5s;
+    }
+
+    @keyframes logo1 {
+        0%   {opacity: 0; left: 50%; bottom: 15%;}
+        90% {opacity: 1; left: 50%; bottom: 15%;}
+        100% {opacity: 0; left: 50%; bottom: 15%; transform: translate(-160px, -200px) rotate(-325deg);}
+    }
+
+    .about-box:hover .logo2{
+        animation-name: logo2;
+        animation-duration: 4s;
+    }
+
+    @keyframes logo2 {
+        0%   {opacity: 0; left: 50%; bottom: 15%;}
+        80% {opacity: 1; left: 50%; bottom: 15%;}
+        100% {opacity: 0; left: 50%; bottom: 15%; transform: translate(-230px, -100px) rotate(-90deg);}
+    }
+
+    .about-box:hover .logo3{
+        animation-name: logo3;
+        animation-duration: 4.5s;
+    }
+
+    @keyframes logo3 {
+        0%   {opacity: 0; left: 50%; bottom: 15%;}
+        80% {opacity: 1; left: 50%; bottom: 15%;}
+        100% {opacity: 0; left: 50%; bottom: 15%; transform: translate(-110px, -250px) rotate(-125deg);}
+    }
+
+    .about-box:hover .logo4{
+        animation-name: logo4;
+        animation-duration: 3.5s;
+    }
+
+    @keyframes logo4 {
+        0%   {opacity: 0; left: 50%; bottom: 15%;}
+        80% {opacity: 1; left: 50%; bottom: 15%;}
+        100% {opacity: 0; left: 50%; bottom: 15%; transform: translate(-170px, -350px) rotate(-360deg);}
+    }
+
+    .about-box:hover .logo5{
+        animation-name: logo5;
+        animation-duration: 4.2s;
+    }
+
+    @keyframes logo5 {
+        0%   {opacity: 0; left: 50%; bottom: 15%;}
+        80% {opacity: 1; left: 50%; bottom: 15%;}
+        100% {opacity: 0; left: 50%; bottom: 15%; transform: translate(-220px, -240px) rotate(-105deg);}
+    }
+
+    /* /// End Left Brain /// */
+
+    /* /// Right Brain /// */
+
+    .logo6, .logo7, .logo8, .logo9, .logo10 {
+        color: #1DCDFE;
+        text-shadow: #1DCDFE 0px 0px 8px;
+    }
+    
+    .about-box:hover .logo6{
+        animation-name: logo6;
+        animation-duration: 5s;
+    }
+    
+    @keyframes logo6 {
+        0%   {opacity: 0; right: 50%; bottom: 15%;}
+        80% {opacity: 1; right: 50%; bottom: 15%;}
+        100% {opacity: 0; right: 50%; bottom: 15%; transform: translate(50px, -320px) rotate(-405deg);}
+    }
+
+    .about-box:hover .logo7{
+        animation-name: logo7;
+        animation-duration: 4.5s;
+    }
+    
+    @keyframes logo7 {
+        0%   {opacity: 0; right: 50%; bottom: 15%;}
+        80% {opacity: 1; right: 50%; bottom: 15%;}
+        100% {opacity: 0; right: 50%; bottom: 15%; transform: translate(90px, -200px) rotate(-65deg);}
+    }
+
+    .about-box:hover .logo8{
+        animation-name: logo8;
+        animation-duration: 5.2s;
+    }
+    
+    @keyframes logo8 {
+        0%   {opacity: 0; right: 50%; bottom: 15%;}
+        80% {opacity: 1; right: 50%; bottom: 15%;}
+        100% {opacity: 0; right: 50%; bottom: 15%; transform: translate(220px, -220px) rotate(-205deg);}
+    }
+
+    .about-box:hover .logo9{
+        animation-name: logo9;
+        animation-duration: 3.8s;
+    }
+    
+    @keyframes logo9 {
+        0%   {opacity: 0; right: 50%; bottom: 15%;}
+        80% {opacity: 1; right: 50%; bottom: 15%;}
+        100% {opacity: 0; right: 50%; bottom: 15%; transform: translate(180px, -320px) rotate(120deg);}
+    }
+
+    .about-box:hover .logo10{
+        animation-name: logo10;
+        animation-duration: 4.8s;
+    }
+    
+    @keyframes logo10 {
+        0%   {opacity: 0; right: 50%; bottom: 15%;}
+        80% {opacity: 1; right: 50%; bottom: 15%;}
+        100% {opacity: 0; right: 50%; bottom: 15%; transform: translate(200px, -60px) rotate(-105deg);}
+    }
+
+    /* /// End Right Brain /// */
+
+    /* /// End Animation /// */
 
 /* End About Box */
 
