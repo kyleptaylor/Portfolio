@@ -381,7 +381,7 @@ a.redirect-link:last-child {
 }
 
 .brain-img-box{
-    margin: 0px auto -10px;
+    margin: 0px auto 0px;
     width: 80%;
     max-width: 450px;
     max-height: auto;
@@ -400,8 +400,21 @@ a.redirect-link:last-child {
     }
 }
 
-.brain-img{
+.brain-img {
     width: 100%;
+    animation: MoveUpDown 2s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275)    ;
+    position: relative;
+    left: 0;
+    bottom: 0;
+}
+
+.about-box:hover .brain-img {
+    animation-play-state: paused;
+}
+
+@keyframes MoveUpDown {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(8px);}
 }
 
     /* /// Animation /// */
