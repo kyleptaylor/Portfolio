@@ -129,7 +129,7 @@ a {
 
 @media screen and (max-width: 1000px) {
     .box-title{
-        background-color: rgb(47, 69, 92, .90);
+        background-color: rgb(47, 69, 92);
         margin: 0;
         padding: 0px;
         top: 0px;
