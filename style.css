@@ -402,6 +402,7 @@ a.redirect-link:last-child {
     position: relative;
     left: 0;
     bottom: 0;
+    user-select: none; 
 }
 
 .about-box:hover .brain-img {
