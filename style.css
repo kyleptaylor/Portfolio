@@ -442,7 +442,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo1{
         animation-name: logo1;
-        animation-duration: 5s;
+        animation-duration: 4s;
     }
 
     @keyframes logo1 {
@@ -453,7 +453,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo2{
         animation-name: logo2;
-        animation-duration: 4s;
+        animation-duration: 3.8s;
     }
 
     @keyframes logo2 {
@@ -464,7 +464,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo3{
         animation-name: logo3;
-        animation-duration: 4.5s;
+        animation-duration: 4.2s;
     }
 
     @keyframes logo3 {
@@ -475,7 +475,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo4{
         animation-name: logo4;
-        animation-duration: 3.5s;
+        animation-duration: 3.2s;
     }
 
     @keyframes logo4 {
@@ -486,7 +486,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo5{
         animation-name: logo5;
-        animation-duration: 4.2s;
+        animation-duration: 3.8s;
     }
 
     @keyframes logo5 {
@@ -506,7 +506,7 @@ a.redirect-link:last-child {
     
     .about-box:hover .logo6{
         animation-name: logo6;
-        animation-duration: 5s;
+        animation-duration: 4.3s;
     }
     
     @keyframes logo6 {
@@ -517,7 +517,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo7{
         animation-name: logo7;
-        animation-duration: 4.5s;
+        animation-duration: 3.9s;
     }
     
     @keyframes logo7 {
@@ -528,7 +528,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo8{
         animation-name: logo8;
-        animation-duration: 5.2s;
+        animation-duration: 4.1s;
     }
     
     @keyframes logo8 {
@@ -539,7 +539,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo9{
         animation-name: logo9;
-        animation-duration: 3.8s;
+        animation-duration: 3.3s;
     }
     
     @keyframes logo9 {
@@ -550,7 +550,7 @@ a.redirect-link:last-child {
 
     .about-box:hover .logo10{
         animation-name: logo10;
-        animation-duration: 4.8s;
+        animation-duration: 3.8s;
     }
     
     @keyframes logo10 {
