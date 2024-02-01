@@ -28,6 +28,28 @@ body {
     } 
 }
 
+/* Scroll Bar */
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #2F455C;
+    box-shadow: inset 0 0 3px #21D0B2;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #34F5C599;
+    border-radius: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #34F5C5;
+  }
+
+/* End Scroll Bar */
+
 /* Hover Text */
 
 .hover-text {
