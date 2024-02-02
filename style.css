@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
     transition: all .2s ease;
+    scroll-behavior: smooth;
 }
 
 @media screen and (min-width: 1000px) {
@@ -21,7 +22,7 @@ body {
         position: fixed; 
         border-radius: 50%; 
         border: 3px solid #34F5C5; 
-        box-shadow: 0px 0px 150px 100px #1DCDFE50;
+        box-shadow: 0px 0px 150px 100px #34F5C550;
         pointer-events: none; /* Allow interaction with underlying elements */ 
         transform: translate(-50%, -50%); 
         transition: width 0.2s ease, height 0.2s ease; 
@@ -45,6 +46,10 @@ body {
 
   ::-webkit-scrollbar-thumb:hover {
     background: #34F5C5;
+  }
+
+  #about-nav, #experience-nav, #projects-nav {
+    scroll-margin: 50px;
   }
 
 /* End Scroll Bar */

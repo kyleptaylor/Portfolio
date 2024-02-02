@@ -5,29 +5,6 @@ document.addEventListener("mousemove", (e) => {
   cursor.style.top = e.clientY + "px";
 });
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    var target = this.getAttribute("href");
-    var targetElement = document.querySelector(target);
-
-    // Check if the target element exists
-    if (targetElement) {
-      // Reset scroll position
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth",
-      });
-
-      // Scroll to the target element
-      targetElement.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  });
-});
-
 // Name Wave Effect //
 
 window.addEventListener('load', function () {
@@ -89,59 +66,111 @@ document.addEventListener('DOMContentLoaded', function () {
   const projectTitle = document.getElementById('projects')
   const projectBox = document.querySelector('.project-box');
   const customCursor = document.querySelector('.custom-cursor');
+  const aboutNav = document.querySelector('.nav-about')
+  const experienceNav = document.querySelector('.nav-experience')
+  const projectsNav = document.querySelector('.nav-projects')
 
-  aboutBox.addEventListener('mouseenter', function (){
-    if (window.matchMedia("(min-width: 1000px)").matches) {
+  if (window.matchMedia("(min-width: 1000px)").matches) {
+    
+    aboutBox.addEventListener('mouseenter', function (){
       aboutTitle.style.transform = 'scale(1.03)';
       aboutTitle.style.backgroundColor = '#385464';
       aboutTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
-    }
-  });
+    });
 
-  aboutBox.addEventListener('mouseleave', function (){
-    aboutTitle.style.transform = 'scale(1)';
-    aboutTitle.style.backgroundColor = '';
-    aboutTitle.style.boxShadow = ''
-  });
+    aboutBox.addEventListener('mouseleave', function (){
+      aboutTitle.style.transform = 'scale(1)';
+      aboutTitle.style.backgroundColor = '';
+      aboutTitle.style.boxShadow = ''
+    });
 
-  experienceBox.addEventListener('mouseenter', function () {
+    aboutNav.addEventListener('mouseenter', function (){
+      aboutTitle.style.transform = 'scale(1.03)';
+      aboutTitle.style.backgroundColor = '#385464';
+      aboutTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
+      aboutBox.style.transform = 'scale(1.03)';
+      aboutBox.style.backgroundColor = '#34F5C515';
+    });
+
+    aboutNav.addEventListener('mouseleave', function (){
+      aboutTitle.style.transform = '';
+      aboutTitle.style.backgroundColor = '';
+      aboutTitle.style.boxShadow = ''
+      aboutBox.style.transform = '';
+      aboutBox.style.backgroundColor = '';
+    });
+
+    experienceBox.addEventListener('mouseenter', function () {
       customCursor.style.border = '3px solid #1DCDFE';
       customCursor.style.boxShadow = '0px 0px 150px 100px #1DCDFE50';
-      
-      if (window.matchMedia("(min-width: 1000px)").matches) {
-        experienceTitle.style.transform = 'scale(1.03)';
-        experienceTitle.style.backgroundColor = '#30526B';
-        experienceTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
-      }
-  });
+      experienceTitle.style.transform = 'scale(1.03)';
+      experienceTitle.style.backgroundColor = '#30526B';
+      experienceTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
+    });
 
-  experienceBox.addEventListener('mouseleave', function () {
-      experienceTitle.style.transform = 'scale(1)';
+    experienceBox.addEventListener('mouseleave', function () {
       customCursor.style.border = '';
       customCursor.style.boxShadow = '';
+      experienceTitle.style.transform = '';
       experienceTitle.style.backgroundColor = '';
       experienceTitle.style.boxShadow = ''
-  });
+      experienceBox.style.transform = '';
+      experienceBox.style.backgroundColor = '';
+    });
 
-  projectBox.addEventListener('mouseenter', function () {
+    experienceNav.addEventListener('mouseenter', function () {
+      experienceTitle.style.transform = 'scale(1.03)';
+      experienceTitle.style.backgroundColor = '#30526B';
+      experienceTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
+      experienceBox.style.transform = 'scale(1.03)';
+      experienceBox.style.backgroundColor = '#1DCDFE15';
+    });
+
+    experienceNav.addEventListener('mouseleave', function () {
+      experienceTitle.style.transform = '';
+      experienceTitle.style.backgroundColor = '';
+      experienceTitle.style.boxShadow = ''
+      experienceBox.style.transform = '';
+      experienceBox.style.backgroundColor = '';
+    });
+
+    projectBox.addEventListener('mouseenter', function () {
       customCursor.style.border = '3px solid #C19DFF';
       customCursor.style.boxShadow = '0px 0px 150px 100px #C19DFF50';
+      projectTitle.style.transform = 'scale(1.03)';
+      projectTitle.style.backgroundColor = '#3D4D6B';
+      projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
+      projectBox.style.transform = 'scale(1.03)';
+      projectBox.style.backgroundColor = '#C19DFF15';
+    });
 
-      if (window.matchMedia("(min-width: 1000px)").matches) {
-        projectTitle.style.transform = 'scale(1.03)';
-        projectTitle.style.backgroundColor = '#3D4D6B';
-        projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
-      }
-  });
-
-  projectBox.addEventListener('mouseleave', function () {
-      projectTitle.style.transform = 'scale(1)';
+    projectBox.addEventListener('mouseleave', function () {
       customCursor.style.border = '';
       customCursor.style.boxShadow = '';
+      projectTitle.style.transform = '';
       projectTitle.style.backgroundColor = '';
-      experienceTitle.style.boxShadow = ''
-  });
+      projectTitle.style.boxShadow = ''
+      projectBox.style.transform = '';
+      projectBox.style.backgroundColor = '';
+    });
 
+    projectsNav.addEventListener('mouseenter', function () {
+      projectTitle.style.transform = 'scale(1.03)';
+      projectTitle.style.backgroundColor = '#3D4D6B';
+      projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px'
+      projectBox.style.transform = 'scale(1.03)';
+      projectBox.style.backgroundColor = '#1DCDFE15';
+    });
+
+    projectsNav.addEventListener('mouseleave', function () {
+      projectTitle.style.transform = '';
+      projectTitle.style.backgroundColor = '';
+      projectTitle.style.boxShadow = ''
+      projectBox.style.transform = '';
+      projectBox.style.backgroundColor = '';
+    });
+
+  }
 });
 
 // End Hover On Sections Effect //
