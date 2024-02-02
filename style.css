@@ -25,7 +25,7 @@ body {
         pointer-events: none; /* Allow interaction with underlying elements */ 
         transform: translate(-50%, -50%); 
         transition: width 0.2s ease, height 0.2s ease; 
-    } 
+    }   
 }
 
 /* Scroll Bar */
@@ -36,7 +36,6 @@ body {
   
   ::-webkit-scrollbar-track {
     background: #2F455C;
-    box-shadow: inset 0 0 3px #21D0B2;
   }
   
   ::-webkit-scrollbar-thumb {
@@ -66,6 +65,16 @@ h2.hover-text span {
     margin: 0px;
     display: inline-block;
 }
+
+/* For JS on Screenload */
+
+.hover-text span.hover-effect {
+    color: #34F5C5;
+    transform: scale(1.4);
+    text-shadow: #21D0B2 0px 0px 8px;
+}
+
+/* End For JS on Screenload */
 
 @media screen and (min-width: 1000px) {
     h2.hover-text span {
