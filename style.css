@@ -49,7 +49,13 @@ body {
   }
 
   #about-nav, #experience-nav, #projects-nav {
-    scroll-margin: 50px;
+    scroll-margin-top: 50px;
+  }
+
+  @media screen and (max-width: 1000px) {
+    #about-nav, #experience-nav, #projects-nav {
+        scroll-margin-top: 0px;
+      }
   }
 
 /* End Scroll Bar */
@@ -391,7 +397,7 @@ a.redirect-link:last-child {
 .about-box{
     height: calc(80vh - 66px);
     padding: 40px;
-    margin: 20px 20px 60px;
+    margin: 20px 20px 70px;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -605,7 +611,7 @@ a.redirect-link:last-child {
 
 .experience-box{
     padding: 25px;
-    margin: 20px 20px 60px;
+    margin: 20px 20px 70px;
     display: flex;
     flex-direction: column;
     border: 1px solid #1DCDFE;
@@ -725,7 +731,7 @@ a.redirect-link:last-child {
 
 .project-box{
     padding: 25px;
-    margin: 20px 20px 60px;    
+    margin: 20px 20px 70px;    
     display: flex;
     flex-direction: column;
     border: 1px solid #C19DFF;
