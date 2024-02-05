@@ -77,15 +77,15 @@ h2.hover-text span {
     display: inline-block;
 }
 
-/* For JS on Screenload */
+    /* For JS for Name Hover Effect */
 
-.hover-text span.hover-effect {
-    color: #34F5C5;
-    transform: scale(1.4);
-    text-shadow: #21D0B2 0px 0px 8px;
-}
+    .hover-effect {
+        color: #34F5C5;
+        transform: scale(1.4);
+        text-shadow: #21D0B2 0px 0px 8px;
+    }
 
-/* End For JS on Screenload */
+    /* End For JS on Screenload */
 
 @media screen and (min-width: 1000px) {
     h2.hover-text span {
