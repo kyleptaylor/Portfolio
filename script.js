@@ -68,6 +68,7 @@ const customCursor = document.querySelector('.custom-cursor');
 const aboutNav = document.querySelector('.nav-about');
 const experienceNav = document.querySelector('.nav-experience');
 const projectsNav = document.querySelector('.nav-projects');
+const overlay = document.querySelector('.overlay')
 
 const aboutBoxEnterListener = function () {
   aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
@@ -75,6 +76,8 @@ const aboutBoxEnterListener = function () {
   projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
   aboutTitle.style.backgroundColor = '#385464';
   aboutTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
+  overlay.style.opacity = '1';
+  aboutBox.style.zIndex = '4';
 };
 
 const aboutBoxLeaveListener = function () {
@@ -83,6 +86,8 @@ const aboutBoxLeaveListener = function () {
   projectTitle.style.transform = '';
   aboutTitle.style.backgroundColor = '';
   aboutTitle.style.boxShadow = '';
+  overlay.style.opacity = '';
+  aboutBox.style.zIndex = '';
 };
 
 const aboutNavEnterListener = function () {
@@ -117,6 +122,8 @@ const experienceBoxEnterListener = function () {
   projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
   experienceTitle.style.backgroundColor = '#30526B';
   experienceTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
+  overlay.style.opacity = '1';
+  experienceBox.style.zIndex = '4';
 };
 
 const experienceBoxLeaveListener = function () {
@@ -129,6 +136,8 @@ const experienceBoxLeaveListener = function () {
   experienceTitle.style.boxShadow = '';
   experienceBox.style.transform = '';
   experienceBox.style.backgroundColor = '';
+  overlay.style.opacity = '';
+  experienceBox.style.zIndex = '';
 };
 
 const experienceNavEnterListener = function () {
@@ -165,6 +174,8 @@ const projectBoxEnterListener = function () {
   projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
   projectBox.style.transform = 'scale(1.03)';
   projectBox.style.backgroundColor = '#C19DFF15';
+  overlay.style.opacity = '1';
+  projectBox.style.zIndex = '4';
 };
 
 const projectBoxLeaveListener = function () {
@@ -177,6 +188,8 @@ const projectBoxLeaveListener = function () {
   projectTitle.style.boxShadow = '';
   projectBox.style.transform = '';
   projectBox.style.backgroundColor = '';
+  overlay.style.opacity = '';
+  projectBox.style.zIndex = '';
 };
 
 const projectsNavEnterListener = function () {

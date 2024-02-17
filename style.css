@@ -16,6 +16,19 @@ body {
     padding: 0;
 }
 
+.overlay {
+    z-index: 3; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #00000050;
+    opacity: 0;
+    transition: opacity 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    pointer-events: none; 
+}
+
 @media screen and (min-width: 1000px) {
     .custom-cursor { 
         z-index: -1;
@@ -361,7 +374,7 @@ a.redirect-link:last-child {
     position: absolute;
     right: -5px;
     top: 10px;
-    color: #00000090;
+    color: #c0c0c0;
     transition: transform .2s ease-in-out;
 }
 
@@ -385,7 +398,6 @@ a.redirect-link:last-child {
 @media screen and (max-width: 1000px) {
     .redirect-text-icon {
         margin-left: 8px;
-
         display: inline;
     }
 }
@@ -395,6 +407,7 @@ a.redirect-link:last-child {
 /* About Box */
 
 .about-box{
+    z-index: 2;
     height: calc(80vh - 66px);
     padding: 40px;
     margin: 20px 20px 70px;
@@ -610,6 +623,7 @@ a.redirect-link:last-child {
 /* Experience Box */
 
 .experience-box{
+    z-index: 2;
     padding: 25px;
     margin: 20px 20px 70px;
     display: flex;
@@ -730,6 +744,7 @@ a.redirect-link:last-child {
 /* Project Box */
 
 .project-box{
+    z-index: 2;
     padding: 25px;
     margin: 20px 20px 70px;    
     display: flex;
