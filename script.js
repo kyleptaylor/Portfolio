@@ -197,7 +197,7 @@ const projectsNavEnterListener = function () {
   projectBox.style.transform = 'scale(1.03)';
   aboutBox.style.transform = 'scale(1.03)';
   experienceBox.style.transform = 'scale(1.03)';
-  projectBox.style.backgroundColor = '#1DCDFE15';
+  projectBox.style.backgroundColor = '#C19DFF15';
 };
 
 const projectsNavLeaveListener = function () {
