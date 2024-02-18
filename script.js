@@ -115,8 +115,7 @@ const aboutNavLeaveListener = function () {
 };
 
 const experienceBoxEnterListener = function () {
-  customCursor.style.border = '3px solid #1DCDFE';
-  customCursor.style.boxShadow = '0px 0px 150px 100px #1DCDFE50';
+  customCursor.style.boxShadow = '0px 0px 100vw 10vw #1DCDFE50';
   experienceTitle.style.transform = 'scale(1.03) translateY(-20%)';
   aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
   projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
@@ -127,7 +126,6 @@ const experienceBoxEnterListener = function () {
 };
 
 const experienceBoxLeaveListener = function () {
-  customCursor.style.border = '';
   customCursor.style.boxShadow = '';
   experienceTitle.style.transform = '';
   aboutTitle.style.transform = '';
@@ -165,8 +163,7 @@ const experienceNavLeaveListener = function () {
 };
 
 const projectBoxEnterListener = function () {
-  customCursor.style.border = '3px solid #C19DFF';
-  customCursor.style.boxShadow = '0px 0px 150px 100px #C19DFF50';
+  customCursor.style.boxShadow = '0px 0px 100vw 10vw #C19DFF50';
   projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
   aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
   experienceTitle.style.transform = 'scale(1.03) translateY(-20%)';
@@ -179,7 +176,6 @@ const projectBoxEnterListener = function () {
 };
 
 const projectBoxLeaveListener = function () {
-  customCursor.style.border = '';
   customCursor.style.boxShadow = '';
   projectTitle.style.transform = '';
   aboutTitle.style.transform = '';
