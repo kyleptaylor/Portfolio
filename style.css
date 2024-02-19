@@ -359,7 +359,13 @@ a {
 
 a.redirect-link{
     text-decoration: none;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    a.redirect-link{
+        margin-bottom: 25px;
+    }
 }
 
 a.redirect-link:last-child {
@@ -802,13 +808,16 @@ a.redirect-link:last-child {
     width: 100px;
     height: 100px;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 8px;
+    border: 1px solid #c0c0c090;
 }
 
 @media screen and (max-width: 1000px) {
     .project-img{
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
+        margin-top: 31px;
+        align-self: flex-start;
     }
 }
 
@@ -826,6 +835,12 @@ a.redirect-link:last-child {
 .project-paragraph{
     text-align: right;
     font-size: .9em;
+}
+
+@media screen and (max-width: 1000px) {
+    .project-paragraph{
+        font-size: .8em;
+    }
 }
 
 /* End Project Box */
