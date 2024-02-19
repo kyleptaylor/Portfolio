@@ -746,7 +746,7 @@ a.redirect-link:last-child {
 .project-box{
     z-index: 2;
     padding: 25px;
-    margin: 20px 20px 70px;    
+    margin: 20px 20px 10px;    
     display: flex;
     flex-direction: column;
     border: 1px solid #C19DFF;
@@ -829,3 +829,19 @@ a.redirect-link:last-child {
 }
 
 /* End Project Box */
+
+.creator-box {
+    text-align: center; 
+    z-index: 2;
+    padding: 25px;
+    margin: 0px 30px;    
+}
+
+.creator-box a {
+    font-size: .9em;
+    font-family: 'Varela Round', 'Heebo', sans-serif;
+    margin: 0;
+    color: #c0c0c0;
+    font-weight: 400;
+    line-height: 1.3;
+}
