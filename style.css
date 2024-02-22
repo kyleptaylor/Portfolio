@@ -187,6 +187,7 @@ a {
 @media screen and (max-width: 1000px) {
     .box-title{
         position: sticky;
+        z-index: 4;
         scroll-margin-top: 0px;
         background-color: rgb(47, 69, 92);
         margin: 0;
