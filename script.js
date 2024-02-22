@@ -72,22 +72,20 @@ const overlay = document.querySelector('.overlay')
 
 const aboutBoxEnterListener = function () {
   aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  experienceTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
   aboutTitle.style.backgroundColor = '#385464';
   aboutTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
   overlay.style.opacity = '1';
   aboutBox.style.zIndex = '4';
+  aboutTitle.style.zIndex = '4';
 };
 
 const aboutBoxLeaveListener = function () {
   aboutTitle.style.transform = '';
-  experienceTitle.style.transform = '';
-  projectTitle.style.transform = '';
   aboutTitle.style.backgroundColor = '';
   aboutTitle.style.boxShadow = '';
   overlay.style.opacity = '';
   aboutBox.style.zIndex = '';
+  aboutTitle.style.zIndex = '';
 };
 
 const aboutNavEnterListener = function () {
@@ -117,25 +115,24 @@ const aboutNavLeaveListener = function () {
 const experienceBoxEnterListener = function () {
   customCursor.style.boxShadow = '0px 0px 100vw 10vw #1DCDFE50';
   experienceTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
   experienceTitle.style.backgroundColor = '#30526B';
   experienceTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
   overlay.style.opacity = '1';
   experienceBox.style.zIndex = '4';
+  experienceTitle.style.zIndex = '4';
+
 };
 
 const experienceBoxLeaveListener = function () {
   customCursor.style.boxShadow = '';
   experienceTitle.style.transform = '';
-  aboutTitle.style.transform = '';
-  projectTitle.style.transform = '';
   experienceTitle.style.backgroundColor = '';
   experienceTitle.style.boxShadow = '';
   experienceBox.style.transform = '';
   experienceBox.style.backgroundColor = '';
   overlay.style.opacity = '';
   experienceBox.style.zIndex = '';
+  experienceTitle.style.zIndex = '';
 };
 
 const experienceNavEnterListener = function () {
@@ -165,27 +162,25 @@ const experienceNavLeaveListener = function () {
 const projectBoxEnterListener = function () {
   customCursor.style.boxShadow = '0px 0px 100vw 10vw #C19DFF50';
   projectTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
-  experienceTitle.style.transform = 'scale(1.03) translateY(-20%)';
   projectTitle.style.backgroundColor = '#3D4D6B';
   projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
   projectBox.style.transform = 'scale(1.03)';
   projectBox.style.backgroundColor = '#C19DFF15';
   overlay.style.opacity = '1';
   projectBox.style.zIndex = '4';
+  projectTitle.style.zIndex = '4';
 };
 
 const projectBoxLeaveListener = function () {
   customCursor.style.boxShadow = '';
   projectTitle.style.transform = '';
-  aboutTitle.style.transform = '';
-  experienceTitle.style.transform = '';
   projectTitle.style.backgroundColor = '';
   projectTitle.style.boxShadow = '';
   projectBox.style.transform = '';
   projectBox.style.backgroundColor = '';
   overlay.style.opacity = '';
   projectBox.style.zIndex = '';
+  projectTitle.style.zIndex = '';
 };
 
 const projectsNavEnterListener = function () {
