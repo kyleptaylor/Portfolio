@@ -174,8 +174,7 @@ a {
     z-index: 5;
     margin: 25px 21px 0;
     text-align: center;
-    position: sticky;
-    top: 75px;
+    position: relative;
     background-color: rgb(47, 69, 92);
     border-radius: 10px;
     border: 1px solid #eeeeee;
@@ -188,6 +187,7 @@ a {
 
 @media screen and (max-width: 1000px) {
     .box-title{
+        position: sticky;
         scroll-margin-top: 0px;
         background-color: rgb(47, 69, 92);
         margin: 0;
