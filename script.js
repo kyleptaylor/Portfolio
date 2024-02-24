@@ -56,6 +56,32 @@ window.addEventListener('load', function () {
 
 // End Name Wave Effect //
 
+// Tilt Effect //
+
+let constrain = 1100;
+let mouseOverContainer = document.getElementById("tilt-backlayer");
+let tiltLayers = document.querySelectorAll(".tilt-layer");
+
+mouseOverContainer.addEventListener('mousemove', function(e) {
+  tiltLayers.forEach(layer => {
+    let box = layer.getBoundingClientRect();
+    let xy = [e.clientX, e.clientY];
+    let calcX = -(xy[1] - box.y - (box.height / 2)) / constrain;
+    let calcY = (xy[0] - box.x - (box.width / 2)) / constrain;
+
+    if (layer.contains(e.target)) {
+      layer.style.transform = "scale(1.03) "
+        + "perspective(150px) "
+        + "rotateX(" + calcX + "deg) "
+        + "rotateY(" + calcY + "deg)";
+    } else {
+      layer.style.transform = ''; 
+    }
+  });
+});
+
+// End Tilt Effect //
+
 // Hover On Sections Effect //
 
 const aboutTitle = document.getElementById('about');
@@ -120,7 +146,6 @@ const experienceBoxEnterListener = function () {
   overlay.style.opacity = '1';
   experienceBox.style.zIndex = '4';
   experienceTitle.style.zIndex = '4';
-
 };
 
 const experienceBoxLeaveListener = function () {
@@ -222,73 +247,33 @@ const addEffectsFunc = function () {
   projectsNav.addEventListener('mouseleave', projectsNavLeaveListener);
 };
 
-let windowWidth = window.innerWidth;
+const removeEffectsFunc = function () {
+  aboutBox.removeEventListener('mouseenter', aboutBoxEnterListener);
+  aboutBox.removeEventListener('mouseleave', aboutBoxLeaveListener);
+  aboutNav.removeEventListener('mouseenter', aboutNavEnterListener);
+  aboutNav.removeEventListener('mouseleave', aboutNavLeaveListener);
+  experienceBox.removeEventListener('mouseenter', experienceBoxEnterListener);
+  experienceBox.removeEventListener('mouseleave', experienceBoxLeaveListener);
+  experienceNav.removeEventListener('mouseenter', experienceNavEnterListener);
+  experienceNav.removeEventListener('mouseleave', experienceNavLeaveListener);
+  projectBox.removeEventListener('mouseenter', projectBoxEnterListener);
+  projectBox.removeEventListener('mouseleave', projectBoxLeaveListener);
+  projectsNav.removeEventListener('mouseenter', projectsNavEnterListener);
+  projectsNav.removeEventListener('mouseleave', projectsNavLeaveListener);
+};
 
-if (windowWidth > 1000) {
-  addEffectsFunc();
-}
-
-window.addEventListener('resize', function () {
-  windowWidth = window.innerWidth;
-
+const handleWindowResize = function () {
+  const windowWidth = window.innerWidth;
   if (windowWidth <= 1000) {
-    aboutBox.removeEventListener('mouseenter', aboutBoxEnterListener);
-    aboutBox.removeEventListener('mouseleave', aboutBoxLeaveListener);
-    aboutNav.removeEventListener('mouseenter', aboutNavEnterListener);
-    aboutNav.removeEventListener('mouseleave', aboutNavLeaveListener);
-    experienceBox.removeEventListener('mouseenter', experienceBoxEnterListener);
-    experienceBox.removeEventListener('mouseleave', experienceBoxLeaveListener);
-    experienceNav.removeEventListener('mouseenter', experienceNavEnterListener);
-    experienceNav.removeEventListener('mouseleave', experienceNavLeaveListener);
-    projectBox.removeEventListener('mouseenter', projectBoxEnterListener);
-    projectBox.removeEventListener('mouseleave', projectBoxLeaveListener);
-    projectsNav.removeEventListener('mouseenter', projectsNavEnterListener);
-    projectsNav.removeEventListener('mouseleave', projectsNavLeaveListener);
+    removeEffectsFunc();
   } else {
     addEffectsFunc();
   }
-});
-
-// End Hover On Sections Effect //
-
-// Tilt Effect //
-
-let constrain = 1100;
-let mouseOverContainer = document.getElementById("tilt-backlayer");
-let ex1Layer = document.getElementById("tilt-layer");
-
-function transforms(x, y, el) {
-  let box = el.getBoundingClientRect();
-  let calcX = -(y - box.y - (box.height / 2)) / constrain;
-  let calcY = (x - box.x - (box.width / 2)) / constrain;
-  
-  return "perspective(100px) "
-    + "   scale(1.03) "
-    + "   rotateX("+ calcX +"deg) "
-    + "   rotateY("+ calcY +"deg) ";
 };
 
-function transformElement(el, xyEl) {
-  el.style.transform  = transforms.apply(null, xyEl);
-}
+handleWindowResize();
 
-ex1Layer.addEventListener('mouseenter', function() {
-  mouseOverContainer.addEventListener('mousemove', onMouseMove);
-});
+window.addEventListener('resize', handleWindowResize);
 
-ex1Layer.addEventListener('mouseleave', function() {
-  mouseOverContainer.removeEventListener('mousemove', onMouseMove);
-  // Reset transform when leaving
-  ex1Layer.style.transform = '';
-});
 
-function onMouseMove(e) {
-  let xy = [e.clientX, e.clientY];
-  let position = xy.concat([ex1Layer]);
-
-  window.requestAnimationFrame(function(){
-    transformElement(ex1Layer, position);
-  });
-}
-
-// End Tilt Effect //
+// End Hover On Sections Effect //
