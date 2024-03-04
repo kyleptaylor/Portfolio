@@ -16,6 +16,179 @@ body {
     padding: 0;
 }
 
+/* Background */
+
+@media screen and (min-width: 1000px) {
+
+    .background {
+        overflow: hidden;
+        position: fixed;
+        filter: blur(50px);
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        z-index:-1;
+        background: transparent; 
+    }
+
+    .blob {
+        border-radius: 50%;
+        background-color: #34F5C515;
+        background-clip: padding-box; 
+        position: absolute;
+        transform-origin: center;
+    }
+    
+    .blob:nth-child(1){
+        width: 480px;
+        height: 480px;
+        left: 0%;
+        top: 0%;
+        animation: wobble 2s ease alternate infinite, blob-one ease-in-out 18s infinite;
+    }
+    
+    .blob:nth-child(2){
+        width: 390px;
+        height: 390px;
+        top: 40%;
+        left: 20%;
+        animation: wobble 3s ease alternate infinite, blob-two ease-in-out 10s infinite;
+    }
+    
+    .blob:nth-child(3){
+        width: 475px;
+        height: 475px;
+        top: 70%;
+        left: 2%;
+        animation: wobble 2s ease alternate infinite, blob-three ease-in-out 19s infinite;
+    }
+    
+    .blob:nth-child(4){
+        width: 435px;
+        height: 435px;
+        top: 10%;
+        left: 40%;
+        animation: wobble 4s ease alternate infinite, blob-four ease-in-out 16s infinite;
+    }
+    
+    .blob:nth-child(5){
+        width: 425px;
+        height: 425px;
+        top: 0%;
+        right: 0%;
+        animation: wobble 2s ease alternate infinite, blob-five ease-in-out 8s infinite;
+    }
+
+    .blob:nth-child(6){
+        width: 360px;
+        height: 360px;
+        top: 40%;
+        right: 5%;
+        animation: wobble 3s ease alternate infinite,  blob-six ease-in-out 12s infinite;
+    }
+    
+    .blob:nth-child(7){
+        width: 400px;
+        height: 400px;
+        top: 70%;
+        right: -1%;
+        animation: wobble 3s ease alternate infinite,  blob-seven ease-in-out 17s infinite;
+    }
+
+    .blob:nth-child(8){
+        width: 400px;
+        height: 400px;
+        top: 50%;
+        right: 25%;
+        animation: wobble 3s ease alternate infinite,  blob-eight ease-in-out 8s infinite;
+    }
+    
+    
+    @keyframes blob-one{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(28%);
+        }
+    }
+    
+    @keyframes blob-two{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(24%);
+        }
+    }
+    
+    @keyframes blob-three{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(22%);
+        }
+    }
+    
+    @keyframes blob-four{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(-45%);
+        }
+    }
+    
+    @keyframes blob-five{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(-34%);
+        }
+    }
+    
+    @keyframes blob-six{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(-38%);
+        }
+    }
+
+    @keyframes blob-seven{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(-48%);
+        }
+    }
+
+    @keyframes blob-eight{
+        0%, 100%{
+        transform: translatex(0);
+        }
+        50%{
+        transform: translatex(-48%);
+        }
+    }
+    
+    @keyframes wobble {
+        50% {
+        border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+        }
+        100% {
+        border-radius: 38% 52% 75% 36% / 50% 40% 50% 60%;
+        }
+    }  
+}
+
+/* End Background */
+
 .overlay {
     z-index: 3; 
     position: fixed;
@@ -23,8 +196,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #00000040;
-    backdrop-filter: blur(2px);
+    background-color: #00000075;
+    backdrop-filter: blur(4px);
     opacity: 0;
     transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     pointer-events: none; 
@@ -507,7 +680,7 @@ a.redirect-link:last-child {
         height: 10px;
         font-size: 1.5em;
         position: absolute;
-        animation-iteration-count: 3;
+        animation-iteration-count: 2;
         animation-timing-function: cubic-bezier(0, 0, 0, 1);
     }
 

@@ -94,7 +94,8 @@ const customCursor = document.querySelector('.custom-cursor');
 const aboutNav = document.querySelector('.nav-about');
 const experienceNav = document.querySelector('.nav-experience');
 const projectsNav = document.querySelector('.nav-projects');
-const overlay = document.querySelector('.overlay')
+const overlay = document.querySelector('.overlay');
+const blobs = document.querySelectorAll('.blob')
 
 const aboutBoxEnterListener = function () {
   aboutTitle.style.transform = 'scale(1.03) translateY(-20%)';
@@ -103,6 +104,9 @@ const aboutBoxEnterListener = function () {
   overlay.style.opacity = '1';
   aboutBox.style.zIndex = '4';
   aboutTitle.style.zIndex = '4';
+  blobs.forEach(blob => {
+    blob.style.background = '#34F5C525';
+  });
 };
 
 const aboutBoxLeaveListener = function () {
@@ -112,6 +116,9 @@ const aboutBoxLeaveListener = function () {
   overlay.style.opacity = '';
   aboutBox.style.zIndex = '';
   aboutTitle.style.zIndex = '';
+  blobs.forEach(blob => {
+    blob.style.background = '';
+  });
 };
 
 const aboutNavEnterListener = function () {
@@ -146,6 +153,9 @@ const experienceBoxEnterListener = function () {
   overlay.style.opacity = '1';
   experienceBox.style.zIndex = '4';
   experienceTitle.style.zIndex = '4';
+  blobs.forEach(blob => {
+    blob.style.background = '#1DCDFE30';
+  });
 };
 
 const experienceBoxLeaveListener = function () {
@@ -158,6 +168,9 @@ const experienceBoxLeaveListener = function () {
   overlay.style.opacity = '';
   experienceBox.style.zIndex = '';
   experienceTitle.style.zIndex = '';
+  blobs.forEach(blob => {
+    blob.style.background = '';
+  });
 };
 
 const experienceNavEnterListener = function () {
@@ -190,10 +203,13 @@ const projectBoxEnterListener = function () {
   projectTitle.style.backgroundColor = '#3D4D6B';
   projectTitle.style.boxShadow = '#ffffff99 0px 0px 8px';
   projectBox.style.transform = 'scale(1.03)';
-  projectBox.style.backgroundColor = '#C19DFF15';
+  projectBox.style.backgroundColor = '#C19DFF20';
   overlay.style.opacity = '1';
   projectBox.style.zIndex = '4';
   projectTitle.style.zIndex = '4';
+  blobs.forEach(blob => {
+    blob.style.background = '#C19DFF25';
+  });
 };
 
 const projectBoxLeaveListener = function () {
@@ -206,6 +222,9 @@ const projectBoxLeaveListener = function () {
   overlay.style.opacity = '';
   projectBox.style.zIndex = '';
   projectTitle.style.zIndex = '';
+  blobs.forEach(blob => {
+    blob.style.background = '';
+  });
 };
 
 const projectsNavEnterListener = function () {
