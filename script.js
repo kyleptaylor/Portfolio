@@ -59,10 +59,10 @@ window.addEventListener('load', function () {
 // Tilt Effect //
 
 let constrain = 1100;
-let mouseOverContainer = document.getElementById("tilt-backlayer");
+let mainBody = document.getElementById("tilt-backlayer");
 let tiltLayers = document.querySelectorAll(".tilt-layer");
 
-mouseOverContainer.addEventListener('mousemove', function(e) {
+mainBody.addEventListener('mousemove', function(e) {
   tiltLayers.forEach(layer => {
     let box = layer.getBoundingClientRect();
     let xy = [e.clientX, e.clientY];
@@ -294,5 +294,24 @@ handleWindowResize();
 
 window.addEventListener('resize', handleWindowResize);
 
-
 // End Hover On Sections Effect //
+
+const partyModeCheckbox = document.getElementById('party-mode');
+
+partyModeCheckbox.addEventListener('change', function () {
+    if (partyModeCheckbox.checked) {
+        const backgroundDiv = document.createElement("div");
+        backgroundDiv.classList.add("background");
+        for (let i = 0; i < 8; i++) {
+            const blobDiv = document.createElement("div");
+            blobDiv.classList.add("blob");
+            backgroundDiv.appendChild(blobDiv);
+        }
+        document.body.appendChild(backgroundDiv);
+    } else {
+        const backgroundDiv = document.querySelector(".background");
+        if (backgroundDiv) {
+            document.body.removeChild(backgroundDiv);
+        }
+    }
+});

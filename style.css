@@ -23,7 +23,7 @@ body {
     .background {
         overflow: hidden;
         position: fixed;
-        filter: blur(50px);
+        filter: blur(50px) contrast(2);
         top: 0;
         left: 0;
         height: 100%;
@@ -34,21 +34,23 @@ body {
 
     .blob {
         border-radius: 50%;
-        background-color: #34F5C515;
+        background-color: #34F5C530;
         background-clip: padding-box; 
         position: absolute;
         transform-origin: center;
     }
     
     .blob:nth-child(1){
-        width: 480px;
-        height: 480px;
+        background-color: #01DC0330;
+        width: 580px;
+        height: 580px;
         left: 0%;
         top: 0%;
         animation: wobble 2s ease alternate infinite, blob-one ease-in-out 18s infinite;
     }
     
     .blob:nth-child(2){
+        background-color: #FFE62D30;
         width: 390px;
         height: 390px;
         top: 40%;
@@ -57,6 +59,7 @@ body {
     }
     
     .blob:nth-child(3){
+        background-color: #FD449930;
         width: 475px;
         height: 475px;
         top: 70%;
@@ -73,6 +76,7 @@ body {
     }
     
     .blob:nth-child(5){
+        background-color: #DF19FB30;
         width: 425px;
         height: 425px;
         top: 0%;
@@ -81,6 +85,7 @@ body {
     }
 
     .blob:nth-child(6){
+        background-color: #FF5F1F30;
         width: 360px;
         height: 360px;
         top: 40%;
@@ -371,21 +376,6 @@ a {
     }
 }
 
-.social-icons{
-    padding: 30px 0px 0px;
-}
-
-.icon-button{
-    padding-right: 20px;
-    color: #eeeeee;
-}
-
-.icon-button:hover{
-    color: #34F5C5;
-    transform: scale(1.1);
-    text-shadow: #21D0B2 0px 0px 8px;
-}
-
 .main-section{
     margin: 50px auto;
     display: flex;
@@ -436,7 +426,7 @@ a {
     }
 
     .header-box:hover{
-        background-color: #34F5C515;
+        background-color: #34F5C525;
         transform: scale(1.03);
     }
 }
@@ -472,6 +462,114 @@ a {
         background-position: center;
     }
 }
+
+.fun-box{
+    padding: 30px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Social Icons */
+
+.social-icons{
+    padding: 0px 0px 0px;
+}
+
+.icon-button{
+    padding-right: 20px;
+    color: #eeeeee;
+}
+
+.icon-button:hover{
+    color: #34F5C5;
+    transform: scale(1.1);
+    text-shadow: #21D0B2 0px 0px 8px;
+}
+
+/* End Social Icons */
+
+/* Slider Switch */
+
+.switch-box{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .switch-box{
+        display: none;
+    }
+}
+
+.switch-box p{
+    padding: 0 20px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    -webkit-tap-highlight-color: transparent;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #eeeeee;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #34F5C5;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #34F5C5;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 50px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+/* End Slider Switch */
 
 /* Nav */
 
@@ -625,7 +723,7 @@ a.redirect-link:last-child {
 
 @media screen and (min-width: 1000px) {
     .about-box:hover {
-        background-color: #34F5C515;
+        background-color: #34F5C525;
         transform: scale(1.03);
     }
 }
@@ -837,7 +935,7 @@ a.redirect-link:last-child {
 
 @media screen and (min-width: 1000px) {
     .experience-box:hover {
-        background-color: #1DCDFE15;
+        background-color: #1DCDFE25;
         transform: scale(1.03);
     }
 }
@@ -958,7 +1056,7 @@ a.redirect-link:last-child {
 
 @media screen and (min-width: 1000px) {
     .project-box:hover {
-        background-color: #C19DFF15;
+        background-color: #C19DFF25;
         transform: scale(1.03);
     }
 }
