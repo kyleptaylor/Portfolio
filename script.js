@@ -122,7 +122,7 @@ const overlay = document.querySelector(".overlay");
 // const blobs = document.querySelectorAll('.blob')
 
 const aboutBoxEnterListener = function () {
-  aboutTitle.style.transform = "scale(1.02) translateY(-15%)";
+  aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   aboutTitle.style.backgroundColor = "#385464";
   aboutTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
   overlay.style.opacity = "1";
@@ -146,7 +146,7 @@ const aboutBoxLeaveListener = function () {
 };
 
 const aboutNavEnterListener = function () {
-  aboutTitle.style.transform = "scale(1.02) translateY(-15%)";
+  aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
   projectTitle.style.transform = "scale(1.02) translateY(-20%)";
   aboutTitle.style.backgroundColor = "#385464";
@@ -201,7 +201,7 @@ const experienceBoxLeaveListener = function () {
 
 const experienceNavEnterListener = function () {
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
-  aboutTitle.style.transform = "scale(1.02) translateY(-15%)";
+  aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   projectTitle.style.transform = "scale(1.02) translateY(-20%)";
   experienceTitle.style.backgroundColor = "#30526B";
   experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
@@ -257,7 +257,7 @@ const projectBoxLeaveListener = function () {
 
 const projectsNavEnterListener = function () {
   projectTitle.style.transform = "scale(1.02) translateY(-20%)";
-  aboutTitle.style.transform = "scale(1.02) translateY(-15%)";
+  aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
   projectTitle.style.backgroundColor = "#3D4D6B";
   projectTitle.style.boxShadow = "#ffffff99 0px 0px 8px";

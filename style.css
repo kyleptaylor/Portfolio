@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  transition: all 0.25s ease;
+  transition: all 0.3s;
   scroll-behavior: smooth;
 }
 
@@ -474,7 +474,7 @@ a {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    background-image: url("Assets/Avatar Image.jpg");
+    background-image: url("Assets/Avatar Image.webp");
     background-size: cover;
     background-position: center;
   }
