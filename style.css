@@ -37,8 +37,8 @@ body {
 
   .blob:nth-child(1) {
     background-color: #01dc0330;
-    width: 580px;
-    height: 580px;
+    width: 575px;
+    height: 575px;
     left: 0%;
     top: 0%;
     animation: wobble 2s ease alternate infinite,
