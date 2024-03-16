@@ -67,26 +67,35 @@ let mainBody = document.getElementById("tilt-backlayer");
 let tiltLayers = document.querySelectorAll(".tilt-layer");
 
 mainBody.addEventListener("mousemove", function (e) {
-  tiltLayers.forEach((layer) => {
-    let box = layer.getBoundingClientRect();
-    let xy = [e.clientX, e.clientY];
-    let calcX = -(xy[1] - box.y - box.height / 2) / constrain;
-    let calcY = (xy[0] - box.x - box.width / 2) / constrain;
+  const windowWidth = window.innerWidth;
 
-    if (layer.contains(e.target)) {
-      layer.style.transform =
-        "scale(1.02) " +
-        "perspective(150px) " +
-        "rotateX(" +
-        calcX +
-        "deg) " +
-        "rotateY(" +
-        calcY +
-        "deg)";
-    } else {
-      layer.style.transform = "";
-    }
-  });
+  // Check if window width is above 1000px
+  if (windowWidth > 1000) {
+    tiltLayers.forEach((layer) => {
+      let box = layer.getBoundingClientRect();
+      let xy = [e.clientX, e.clientY];
+      let calcX = -(xy[1] - box.y - box.height / 2) / constrain;
+      let calcY = (xy[0] - box.x - box.width / 2) / constrain;
+
+      if (layer.contains(e.target)) {
+        layer.style.transform =
+          "scale(1.02) " +
+          "perspective(150px) " +
+          "rotateX(" +
+          calcX +
+          "deg) " +
+          "rotateY(" +
+          calcY +
+          "deg)";
+      } else {
+        layer.style.transform = "";
+      }
+    });
+  } else {
+    tiltLayers.forEach((layer) => {
+      layer.style.transform = ""; // Reset the transform when window width is below or equal to 1000px
+    });
+  }
 });
 
 // End Tilt Effect //
