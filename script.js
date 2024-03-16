@@ -110,6 +110,7 @@ mainBody.addEventListener("mousemove", function (e) {
 
 const aboutTitle = document.getElementById("about");
 const aboutBox = document.querySelector(".about-box");
+const downArrow = document.getElementById("hover-arrow-down");
 const experienceTitle = document.getElementById("experience");
 const experienceBox = document.querySelector(".experience-box");
 const projectTitle = document.getElementById("projects");
@@ -128,6 +129,7 @@ const aboutBoxEnterListener = function () {
   overlay.style.opacity = "1";
   aboutBox.style.zIndex = "4";
   aboutTitle.style.zIndex = "4";
+  downArrow.style.display = "block";
   // blobs.forEach(blob => {
   //   blob.style.background = '#34F5C525';
   // });
@@ -140,6 +142,7 @@ const aboutBoxLeaveListener = function () {
   overlay.style.opacity = "";
   aboutBox.style.zIndex = "";
   aboutTitle.style.zIndex = "";
+  downArrow.style.display = "";
   // blobs.forEach(blob => {
   //   blob.style.background = '';
   // });
