@@ -1,9 +1,33 @@
+// Cursor and Blob Effect //
+
 const cursor = document.querySelector(".custom-cursor");
+const blobs = document.querySelectorAll(".blob");
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+
+  // Translate the blobs towards the cursor with animation
+  anime({
+    targets: blobs,
+    translateX: function (blob) {
+      const rect = blob.getBoundingClientRect();
+      const centerX = rect.left + rect.width / 2;
+      const deltaX = e.clientX - centerX;
+      return deltaX;
+    },
+    translateY: function (blob) {
+      const rect = blob.getBoundingClientRect();
+      const centerY = rect.top + rect.height / 2;
+      const deltaY = e.clientY - centerY;
+      return deltaY;
+    },
+    duration: 10000,
+    easing: "easeOutSine",
+  });
 });
+
+// End Cursor and Blob Effect //
 
 // Name Wave Effect //
 
@@ -93,7 +117,7 @@ mainBody.addEventListener("mousemove", function (e) {
     });
   } else {
     tiltLayers.forEach((layer) => {
-      layer.style.transform = ""; // Reset the transform when window width is below or equal to 1000px
+      layer.style.transform = "";
     });
   }
 });
@@ -102,16 +126,57 @@ mainBody.addEventListener("mousemove", function (e) {
 
 // Party Mode //
 
-// const partyModeCheckbox = document.getElementById('party-mode');
-// const backgroundDiv = document.querySelector(".background");
+const partyModeCheckbox = document.getElementById("party-mode");
+let colorInterval;
 
-// partyModeCheckbox.addEventListener('change', function () {
-//   if (partyModeCheckbox.checked) {
-//       backgroundDiv.style.display = 'block';
-//   } else {
-//       backgroundDiv.style.display = 'none';
-//   }
-// });
+function stopColorChange() {
+  clearInterval(colorInterval);
+}
+
+partyModeCheckbox.addEventListener("change", function () {
+  if (partyModeCheckbox.checked) {
+    letsParty();
+  } else {
+    stopColorChange();
+    blobs.forEach((blob) => {
+      blob.style.backgroundColor = "#34f5c520";
+    });
+  }
+});
+
+function letsParty() {
+  stopColorChange(); // Stop the previous interval if it exists
+  const neonColors = [
+    "#ff00ff20",
+    "#00ffff20",
+    "#ff00aa20",
+    "#00ff0020",
+    "#ffff0020",
+    "#ff008820",
+    "#ff770020",
+    "#00ff7720",
+    "#ff005520",
+    "#00ffaa20",
+    "#ff770020",
+    "#00aaff20",
+    "#ffaa0020",
+    "#00ff5520",
+    "#ff00ff20",
+    "#ff880020",
+  ];
+
+  function assignRandomColors() {
+    blobs.forEach((blob) => {
+      const randomColor =
+        neonColors[Math.floor(Math.random() * neonColors.length)];
+      blob.style.backgroundColor = randomColor;
+    });
+  }
+
+  assignRandomColors(); // Call it once to set initial colors
+
+  colorInterval = setInterval(assignRandomColors, 1000);
+}
 
 // End Party Mode //
 
@@ -129,7 +194,6 @@ const aboutNav = document.querySelector(".nav-about");
 const experienceNav = document.querySelector(".nav-experience");
 const projectsNav = document.querySelector(".nav-projects");
 const overlay = document.querySelector(".overlay");
-// const blobs = document.querySelectorAll('.blob')
 
 const aboutBoxEnterListener = function () {
   aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
@@ -139,9 +203,10 @@ const aboutBoxEnterListener = function () {
   aboutBox.style.zIndex = "4";
   aboutTitle.style.zIndex = "4";
   downArrow.style.display = "block";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '#34F5C525';
-  // });
+  stopColorChange();
+  blobs.forEach((blob) => {
+    blob.style.background = "#34F5C525";
+  });
 };
 
 const aboutBoxLeaveListener = function () {
@@ -152,9 +217,12 @@ const aboutBoxLeaveListener = function () {
   aboutBox.style.zIndex = "";
   aboutTitle.style.zIndex = "";
   downArrow.style.display = "";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '';
-  // });
+  if (partyModeCheckbox.checked) {
+    letsParty();
+  }
+  blobs.forEach((blob) => {
+    blob.style.background = "";
+  });
 };
 
 const aboutNavEnterListener = function () {
@@ -182,21 +250,20 @@ const aboutNavLeaveListener = function () {
 };
 
 const experienceBoxEnterListener = function () {
-  customCursor.style.boxShadow = "0px 0px 100vw 10vw #1DCDFE20";
-  customCursor.style.backgroundColor = "#1DCDFE20";
+  customCursor.style.backgroundColor = "#1DCDFE25";
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
   experienceTitle.style.backgroundColor = "#30526B";
   experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
   overlay.style.opacity = "1";
   experienceBox.style.zIndex = "4";
   experienceTitle.style.zIndex = "4";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '#1DCDFE30';
-  // });
+  stopColorChange();
+  blobs.forEach((blob) => {
+    blob.style.background = "#1DCDFE30";
+  });
 };
 
 const experienceBoxLeaveListener = function () {
-  customCursor.style.boxShadow = "";
   customCursor.style.backgroundColor = "";
   experienceTitle.style.transform = "";
   experienceTitle.style.backgroundColor = "";
@@ -206,9 +273,12 @@ const experienceBoxLeaveListener = function () {
   overlay.style.opacity = "";
   experienceBox.style.zIndex = "";
   experienceTitle.style.zIndex = "";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '';
-  // });
+  if (partyModeCheckbox.checked) {
+    letsParty();
+  }
+  blobs.forEach((blob) => {
+    blob.style.background = "";
+  });
 };
 
 const experienceNavEnterListener = function () {
@@ -236,8 +306,7 @@ const experienceNavLeaveListener = function () {
 };
 
 const projectBoxEnterListener = function () {
-  customCursor.style.boxShadow = "0px 0px 100vw 10vw #C19DFF20";
-  customCursor.style.backgroundColor = "#C19DFF20";
+  customCursor.style.backgroundColor = "#C19DFF25";
   projectTitle.style.transform = "scale(1.02) translateY(-20%)";
   projectTitle.style.backgroundColor = "#3D4D6B";
   projectTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
@@ -246,13 +315,13 @@ const projectBoxEnterListener = function () {
   overlay.style.opacity = "1";
   projectBox.style.zIndex = "4";
   projectTitle.style.zIndex = "4";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '#C19DFF25';
-  // });
+  stopColorChange();
+  blobs.forEach((blob) => {
+    blob.style.background = "#C19DFF25";
+  });
 };
 
 const projectBoxLeaveListener = function () {
-  customCursor.style.boxShadow = "";
   customCursor.style.backgroundColor = "";
   projectTitle.style.transform = "";
   projectTitle.style.backgroundColor = "";
@@ -262,9 +331,12 @@ const projectBoxLeaveListener = function () {
   overlay.style.opacity = "";
   projectBox.style.zIndex = "";
   projectTitle.style.zIndex = "";
-  // blobs.forEach(blob => {
-  //   blob.style.background = '';
-  // });
+  if (partyModeCheckbox.checked) {
+    letsParty();
+  }
+  blobs.forEach((blob) => {
+    blob.style.background = "";
+  });
 };
 
 const projectsNavEnterListener = function () {

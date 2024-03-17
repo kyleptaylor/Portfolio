@@ -12,7 +12,6 @@ body {
 
 /* Background */
 
-/* 
 @media screen and (min-width: 1000px) {
   .background {
     overflow: hidden;
@@ -23,184 +22,123 @@ body {
     width: 100%;
     z-index: -1;
     background: transparent;
-    display: none;
   }
 
   .blob {
-    filter: blur(50px);
     border-radius: 50%;
-    background-color: #34f5c530;
-    background-clip: padding-box;
+    background-color: #34f5c520;
+    filter: blur(40px);
+    pointer-events: none;
     position: absolute;
     transform-origin: center;
   }
 
-  .blob:nth-child(1) {
-    background-color: #01dc0330;
-    width: 575px;
-    height: 575px;
-    left: 0%;
-    top: 0%;
-    animation: wobble 2s ease alternate infinite,
-      blob-one ease-in-out 18s infinite;
+  .blob-1 {
+    left: 10%;
+    top: -15%;
+    height: 280px;
+    width: 280px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  .blob:nth-child(2) {
-    background-color: #ffe62d30;
-    width: 390px;
-    height: 390px;
-    top: 40%;
-    left: 20%;
-    animation: wobble 3s ease alternate infinite,
-      blob-two ease-in-out 10s infinite;
-  }
-
-  .blob:nth-child(3) {
-    background-color: #fd449930;
-    width: 475px;
-    height: 475px;
-    top: 70%;
-    left: 2%;
-    animation: wobble 2s ease alternate infinite,
-      blob-three ease-in-out 19s infinite;
-  }
-
-  .blob:nth-child(4) {
-    width: 435px;
-    height: 435px;
+  .blob-2 {
+    left: -10%;
     top: 10%;
-    left: 40%;
-    animation: wobble 4s ease alternate infinite,
-      blob-four ease-in-out 16s infinite;
+    height: 270px;
+    width: 270px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  .blob:nth-child(5) {
-    background-color: #df19fb30;
-    width: 425px;
-    height: 425px;
-    top: 0%;
-    right: 0%;
-    animation: wobble 2s ease alternate infinite,
-      blob-five ease-in-out 8s infinite;
-  }
-
-  .blob:nth-child(6) {
-    background-color: #ff5f1f30;
-    width: 360px;
-    height: 360px;
-    top: 40%;
-    right: 5%;
-    animation: wobble 3s ease alternate infinite,
-      blob-six ease-in-out 12s infinite;
-  }
-
-  .blob:nth-child(7) {
-    width: 400px;
-    height: 400px;
-    top: 70%;
-    right: -1%;
-    animation: wobble 3s ease alternate infinite,
-      blob-seven ease-in-out 17s infinite;
-  }
-
-  .blob:nth-child(8) {
-    width: 400px;
-    height: 400px;
+  .blob-3 {
+    left: -5%;
     top: 50%;
-    right: 25%;
-    animation: wobble 3s ease alternate infinite,
-      blob-eight ease-in-out 8s infinite;
+    height: 210px;
+    width: 210px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-one {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(28%);
-    }
+  .blob-4 {
+    left: -5%;
+    top: 80%;
+    height: 290px;
+    width: 290px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-two {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(24%);
-    }
+  .blob-5 {
+    left: 15%;
+    top: 90%;
+    height: 250px;
+    width: 250px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-three {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(22%);
-    }
+  .blob-6 {
+    right: -2%;
+    top: -15%;
+    height: 250px;
+    width: 250px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-four {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-45%);
-    }
+  .blob-7 {
+    right: -10%;
+    top: 30%;
+    height: 280px;
+    width: 280px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-five {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-34%);
-    }
+  .blob-8 {
+    right: -5%;
+    top: 75%;
+    height: 400px;
+    width: 400px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-six {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-38%);
-    }
+  .blob-9 {
+    right: 45%;
+    top: -35%;
+    height: 350px;
+    width: 350px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-seven {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-48%);
-    }
+  .blob-10 {
+    right: 50%;
+    bottom: -35%;
+    height: 350px;
+    width: 350px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
-  @keyframes blob-eight {
-    0%,
-    100% {
-      transform: translatex(0);
-    }
-    50% {
-      transform: translatex(-48%);
-    }
+  .blob-11 {
+    right: 20%;
+    top: -35%;
+    height: 250px;
+    width: 250px;
+    animation: wobble 25s ease-in-out alternate infinite;
+  }
+
+  .blob-12 {
+    right: 30%;
+    bottom: -35%;
+    height: 270px;
+    width: 270px;
+    animation: wobble 25s ease-in-out alternate infinite;
   }
 
   @keyframes wobble {
     50% {
-      border-radius: 42% 58% 70% 30% / 45% 45% 55% 55%;
+      border-radius: 42% 58% 77% 30% / 45% 45% 55% 55%;
+      transform: scale(1.5);
     }
     100% {
-      border-radius: 38% 52% 75% 36% / 50% 40% 50% 60%;
+      border-radius: 38% 52% 75% 26% / 50% 40% 50% 60%;
     }
   }
-} */
+}
 
 /* End Background */
 
@@ -223,10 +161,10 @@ body {
     z-index: -1;
     position: fixed;
     border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    background-color: #34f5c520;
-    box-shadow: 0px 0px 100vw 10vw #34f5c520;
+    height: 450px;
+    width: 450px;
+    background-color: #34f5c525;
+    filter: blur(60px);
     pointer-events: none; /* Allow interaction with underlying elements */
     transform: translate(-50%, -50%);
     transition: width 0s ease, height 0s ease;
@@ -1321,12 +1259,6 @@ a.redirect-link:last-child {
 
 .project-paragraph {
   font-size: 0.9em;
-}
-
-@media screen and (max-width: 1000px) {
-  .project-paragraph {
-    font-size: 0.8em;
-  }
 }
 
 /* End Project Box */
