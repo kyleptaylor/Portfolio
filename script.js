@@ -6,28 +6,87 @@ const blobs = document.querySelectorAll(".blob");
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+  let windowWidth = window.innerWidth;
 
-  // Translate the blobs towards the cursor with animation
-  anime({
-    targets: blobs,
-    translateX: function (blob) {
-      const rect = blob.getBoundingClientRect();
-      const centerX = rect.left + rect.width / 2;
-      const deltaX = e.clientX - centerX;
-      return deltaX;
-    },
-    translateY: function (blob) {
-      const rect = blob.getBoundingClientRect();
-      const centerY = rect.top + rect.height / 2;
-      const deltaY = e.clientY - centerY;
-      return deltaY;
-    },
-    duration: 10000,
-    easing: "easeOutSine",
-  });
+  // Check if window width is above 1000px
+  if (windowWidth > 1000) {
+    anime({
+      targets: blobs,
+      translateX: function (blob) {
+        const rect = blob.getBoundingClientRect();
+        const centerX = rect.left + rect.width / 2;
+        const deltaX = e.clientX - centerX;
+        return deltaX * 0.4;
+      },
+      translateY: function (blob) {
+        const rect = blob.getBoundingClientRect();
+        const centerY = rect.top + rect.height / 2;
+        const deltaY = e.clientY - centerY;
+        return deltaY * 0.4;
+      },
+      duration: 10000,
+      easing: "easeOutSine",
+    });
+  }
 });
 
 // End Cursor and Blob Effect //
+
+// Party Mode //
+
+const partyModeCheckbox = document.getElementById("party-mode");
+let colorInterval;
+
+function stopColorChange() {
+  clearInterval(colorInterval);
+}
+
+partyModeCheckbox.addEventListener("change", function () {
+  if (partyModeCheckbox.checked) {
+    letsParty();
+  } else {
+    stopColorChange();
+    blobs.forEach((blob) => {
+      blob.style.backgroundColor = "#34f5c520";
+    });
+  }
+});
+
+function letsParty() {
+  stopColorChange(); // Stop the previous interval if it exists
+  const neonColors = [
+    "#ff00ff20",
+    "#00ffff20",
+    "#ff00aa20",
+    "#00ff0020",
+    "#ffff0020",
+    "#ff008820",
+    "#ff770020",
+    "#00ff7720",
+    "#ff005520",
+    "#00ffaa20",
+    "#ff770020",
+    "#00aaff20",
+    "#ffaa0020",
+    "#00ff5520",
+    "#ff00ff20",
+    "#ff880020",
+  ];
+
+  function assignRandomColors() {
+    blobs.forEach((blob) => {
+      const randomColor =
+        neonColors[Math.floor(Math.random() * neonColors.length)];
+      blob.style.backgroundColor = randomColor;
+    });
+  }
+
+  assignRandomColors(); // Call it once to set initial colors
+
+  colorInterval = setInterval(assignRandomColors, 1000);
+}
+
+// End Party Mode //
 
 // Name Wave Effect //
 
@@ -91,7 +150,7 @@ let mainBody = document.getElementById("tilt-backlayer");
 let tiltLayers = document.querySelectorAll(".tilt-layer");
 
 mainBody.addEventListener("mousemove", function (e) {
-  const windowWidth = window.innerWidth;
+  let windowWidth = window.innerWidth;
 
   // Check if window width is above 1000px
   if (windowWidth > 1000) {
@@ -123,62 +182,6 @@ mainBody.addEventListener("mousemove", function (e) {
 });
 
 // End Tilt Effect //
-
-// Party Mode //
-
-const partyModeCheckbox = document.getElementById("party-mode");
-let colorInterval;
-
-function stopColorChange() {
-  clearInterval(colorInterval);
-}
-
-partyModeCheckbox.addEventListener("change", function () {
-  if (partyModeCheckbox.checked) {
-    letsParty();
-  } else {
-    stopColorChange();
-    blobs.forEach((blob) => {
-      blob.style.backgroundColor = "#34f5c520";
-    });
-  }
-});
-
-function letsParty() {
-  stopColorChange(); // Stop the previous interval if it exists
-  const neonColors = [
-    "#ff00ff20",
-    "#00ffff20",
-    "#ff00aa20",
-    "#00ff0020",
-    "#ffff0020",
-    "#ff008820",
-    "#ff770020",
-    "#00ff7720",
-    "#ff005520",
-    "#00ffaa20",
-    "#ff770020",
-    "#00aaff20",
-    "#ffaa0020",
-    "#00ff5520",
-    "#ff00ff20",
-    "#ff880020",
-  ];
-
-  function assignRandomColors() {
-    blobs.forEach((blob) => {
-      const randomColor =
-        neonColors[Math.floor(Math.random() * neonColors.length)];
-      blob.style.backgroundColor = randomColor;
-    });
-  }
-
-  assignRandomColors(); // Call it once to set initial colors
-
-  colorInterval = setInterval(assignRandomColors, 1000);
-}
-
-// End Party Mode //
 
 // Hover On Sections Effect //
 
@@ -394,7 +397,7 @@ const removeEffectsFunc = function () {
 };
 
 const handleWindowResize = function () {
-  const windowWidth = window.innerWidth;
+  let windowWidth = window.innerWidth;
   if (windowWidth <= 1000) {
     removeEffectsFunc();
   } else {
