@@ -614,7 +614,7 @@ input:checked + .slider:before {
 
 a.redirect-link {
   text-decoration: none;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 a.redirect-link:last-child {
@@ -1103,6 +1103,12 @@ a.redirect-link:last-child {
   text-align: left;
 }
 
+@media screen and (max-width: 500px) {
+  .full-resume {
+    padding-bottom: 10px;
+  }
+}
+
 @media screen and (max-width: 1000px) {
   .experience-role {
     font-size: 1em;
@@ -1171,7 +1177,7 @@ hr.experience-divider {
 @media screen and (max-width: 500px) {
   hr.experience-divider {
     display: block;
-    margin: 0 -15px 30px;
+    margin: 0 -15px 25px;
     width: calc(100% + 30px);
     height: 1px;
     border: 0;
@@ -1238,7 +1244,7 @@ hr.experience-divider {
 .project-block {
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
+  align-items: center;
 }
 
 @media screen and (max-width: 500px) {
@@ -1292,7 +1298,7 @@ hr.project-divider {
 @media screen and (max-width: 500px) {
   hr.project-divider {
     display: block;
-    margin: 0 -15px 30px;
+    margin: 0 -15px 25px;
     width: calc(100% + 30px);
     height: 1px;
     border: 0;
