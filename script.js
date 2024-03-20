@@ -32,6 +32,61 @@ document.addEventListener("mousemove", (e) => {
 
 // End Cursor and Blob Effect //
 
+// Name Wave Effect //
+
+window.addEventListener("load", function () {
+  const nameSpanElements = [...document.querySelectorAll("h1.hover-text span")];
+  const titleSpanElements = [
+    ...document.querySelectorAll("h2.hover-text span"),
+  ];
+
+  const delayBetweenSpans = 50;
+
+  function applyWaveEffectToSpanElements(elements) {
+    elements.forEach(function (span, index) {
+      setTimeout(function () {
+        span.classList.add("hover-effect");
+
+        setTimeout(function () {
+          span.classList.remove("hover-effect");
+        }, 400);
+      }, index * delayBetweenSpans);
+    });
+
+    // Now Reverse //
+
+    const initialAnimationDuration = elements.length * delayBetweenSpans + 400;
+
+    setTimeout(function () {
+      elements
+        .slice()
+        .reverse()
+        .forEach(function (span, index) {
+          setTimeout(function () {
+            span.classList.add("hover-effect");
+
+            setTimeout(function () {
+              span.classList.remove("hover-effect");
+            }, 400);
+          }, index * delayBetweenSpans);
+        });
+    }, initialAnimationDuration);
+  }
+
+  applyWaveEffectToSpanElements(nameSpanElements);
+  applyWaveEffectToSpanElements(titleSpanElements);
+
+  // Run Function on Click //
+
+  const headerBox = document.querySelector(".header-box");
+  headerBox.addEventListener("click", () => {
+    applyWaveEffectToSpanElements(nameSpanElements);
+    applyWaveEffectToSpanElements(titleSpanElements);
+  });
+});
+
+// End Name Wave Effect //
+
 // Party Mode //
 
 const partyModeCheckbox = document.getElementById("party-mode");
@@ -87,61 +142,6 @@ function letsParty() {
 }
 
 // End Party Mode //
-
-// Name Wave Effect //
-
-window.addEventListener("load", function () {
-  const nameSpanElements = [...document.querySelectorAll("h1.hover-text span")];
-  const titleSpanElements = [
-    ...document.querySelectorAll("h2.hover-text span"),
-  ];
-
-  const delayBetweenSpans = 50;
-
-  function applyWaveEffectToSpanElements(elements) {
-    elements.forEach(function (span, index) {
-      setTimeout(function () {
-        span.classList.add("hover-effect");
-
-        setTimeout(function () {
-          span.classList.remove("hover-effect");
-        }, 400);
-      }, index * delayBetweenSpans);
-    });
-
-    // Now Reverse //
-
-    const initialAnimationDuration = elements.length * delayBetweenSpans + 400;
-
-    setTimeout(function () {
-      elements
-        .slice()
-        .reverse()
-        .forEach(function (span, index) {
-          setTimeout(function () {
-            span.classList.add("hover-effect");
-
-            setTimeout(function () {
-              span.classList.remove("hover-effect");
-            }, 400);
-          }, index * delayBetweenSpans);
-        });
-    }, initialAnimationDuration);
-  }
-
-  applyWaveEffectToSpanElements(nameSpanElements);
-  applyWaveEffectToSpanElements(titleSpanElements);
-
-  // Run Function on Click //
-
-  const headerBox = document.querySelector(".header-box");
-  headerBox.addEventListener("click", () => {
-    applyWaveEffectToSpanElements(nameSpanElements);
-    applyWaveEffectToSpanElements(titleSpanElements);
-  });
-});
-
-// End Name Wave Effect //
 
 // Tilt Effect //
 
