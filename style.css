@@ -1164,6 +1164,22 @@ a.redirect-link:last-child {
 
 /* End Skills */
 
+hr.experience-divider {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  hr.experience-divider {
+    display: block;
+    margin: 0 -15px 30px;
+    width: calc(100% + 30px);
+    height: 1px;
+    border: 0;
+    border: 0.5px solid #1dcdfe;
+    box-shadow: #1dcdfe 0px 0px 8px 1px;
+  }
+}
+
 /* Project Box */
 
 .project-box {
