@@ -12,6 +12,41 @@ body {
 
 /* Background */
 
+#disco-ball {
+  display: none;
+}
+
+@keyframes bounceIn {
+  0% {
+    top: -50%;
+  }
+  20% {
+    top: 0px;
+  }
+  40% {
+    top: -20px;
+  }
+  60% {
+    top: -12px;
+  }
+  80% {
+    top: -15px;
+  }
+  100% {
+    top: -13px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: -2%;
+  }
+  100% {
+    top: -100%;
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1000px) {
   .background {
     overflow: hidden;
@@ -22,6 +57,28 @@ body {
     width: 100%;
     z-index: -1;
     background: transparent;
+  }
+
+  #disco-ball {
+    width: 150px;
+    height: 150px;
+    position: fixed;
+    display: block;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    animation-timing-function: ease-in-out;
+  }
+
+  #disco-ball.show {
+    animation-name: bounceIn;
+  }
+
+  #disco-ball:not(.show) {
+    animation-name: slideOut;
   }
 
   .blob {
@@ -38,7 +95,7 @@ body {
     top: -25%;
     height: 350px;
     width: 350px;
-    animation: wobble 25s ease-in-out alternate infinite;
+    animation: wobble 20s ease-in-out alternate infinite;
   }
 
   .blob-2 {
@@ -46,7 +103,7 @@ body {
     top: 20%;
     height: 300px;
     width: 300px;
-    animation: wobble 25s ease-in-out alternate infinite;
+    animation: wobble 20s ease-in-out alternate infinite;
   }
 
   .blob-3 {
@@ -54,7 +111,7 @@ body {
     top: 40%;
     height: 210px;
     width: 210px;
-    animation: wobble 25s ease-in-out alternate infinite;
+    animation: wobble 20s ease-in-out alternate infinite;
   }
 
   .blob-4 {
@@ -62,7 +119,7 @@ body {
     top: 80%;
     height: 370px;
     width: 370px;
-    animation: wobble 25s ease-in-out alternate infinite;
+    animation: wobble 20s ease-in-out alternate infinite;
   }
   /* 
   .blob-5 {

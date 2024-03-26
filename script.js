@@ -90,25 +90,30 @@ window.addEventListener("load", function () {
 // Party Mode //
 
 const partyModeCheckbox = document.getElementById("party-mode");
+const discoBall = document.getElementById("disco-ball");
+discoBall.style.display = "none";
 let colorInterval;
 
 function stopColorChange() {
   clearInterval(colorInterval);
+  blobs.forEach((blob) => {
+    blob.style.backgroundColor = "#34f5c520";
+  });
 }
 
 partyModeCheckbox.addEventListener("change", function () {
   if (partyModeCheckbox.checked) {
     letsParty();
+    discoBall.style.display = "block";
+    discoBall.classList.add("show");
   } else {
     stopColorChange();
-    blobs.forEach((blob) => {
-      blob.style.backgroundColor = "#34f5c520";
-    });
+    discoBall.classList.remove("show");
   }
 });
 
 function letsParty() {
-  stopColorChange(); // Stop the previous interval if it exists
+  stopColorChange();
   const neonColors = [
     "#ff00ff20",
     "#00ffff20",
@@ -206,10 +211,11 @@ const aboutBoxEnterListener = function () {
   aboutBox.style.zIndex = "4";
   aboutTitle.style.zIndex = "4";
   downArrow.style.display = "block";
-  stopColorChange();
-  blobs.forEach((blob) => {
-    blob.style.background = "#34F5C525";
-  });
+  if (!partyModeCheckbox.checked) {
+    blobs.forEach((blob) => {
+      blob.style.background = "#34F5C525";
+    });
+  }
 };
 
 const aboutBoxLeaveListener = function () {
@@ -223,9 +229,6 @@ const aboutBoxLeaveListener = function () {
   if (partyModeCheckbox.checked) {
     letsParty();
   }
-  blobs.forEach((blob) => {
-    blob.style.background = "";
-  });
 };
 
 const aboutNavEnterListener = function () {
@@ -260,10 +263,11 @@ const experienceBoxEnterListener = function () {
   overlay.style.opacity = "1";
   experienceBox.style.zIndex = "4";
   experienceTitle.style.zIndex = "4";
-  stopColorChange();
-  blobs.forEach((blob) => {
-    blob.style.background = "#1DCDFE30";
-  });
+  if (!partyModeCheckbox.checked) {
+    blobs.forEach((blob) => {
+      blob.style.background = "#1DCDFE30";
+    });
+  }
 };
 
 const experienceBoxLeaveListener = function () {
@@ -279,9 +283,11 @@ const experienceBoxLeaveListener = function () {
   if (partyModeCheckbox.checked) {
     letsParty();
   }
-  blobs.forEach((blob) => {
-    blob.style.background = "";
-  });
+  if (!partyModeCheckbox.checked) {
+    blobs.forEach((blob) => {
+      blob.style.background = "";
+    });
+  }
 };
 
 const experienceNavEnterListener = function () {
@@ -318,10 +324,11 @@ const projectBoxEnterListener = function () {
   overlay.style.opacity = "1";
   projectBox.style.zIndex = "4";
   projectTitle.style.zIndex = "4";
-  stopColorChange();
-  blobs.forEach((blob) => {
-    blob.style.background = "#C19DFF25";
-  });
+  if (!partyModeCheckbox.checked) {
+    blobs.forEach((blob) => {
+      blob.style.background = "#C19DFF25";
+    });
+  }
 };
 
 const projectBoxLeaveListener = function () {
@@ -337,9 +344,11 @@ const projectBoxLeaveListener = function () {
   if (partyModeCheckbox.checked) {
     letsParty();
   }
-  blobs.forEach((blob) => {
-    blob.style.background = "";
-  });
+  if (!partyModeCheckbox.checked) {
+    blobs.forEach((blob) => {
+      blob.style.background = "";
+    });
+  }
 };
 
 const projectsNavEnterListener = function () {
@@ -399,13 +408,9 @@ const removeEffectsFunc = function () {
 const handleWindowResize = function () {
   let windowWidth = window.innerWidth;
   if (windowWidth <= 1000) {
-    removeEffectsFunc();
-  } else {
-    addEffectsFunc();
+    window.location.reload();
   }
 };
-
-handleWindowResize();
 
 window.addEventListener("resize", handleWindowResize);
 
