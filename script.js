@@ -234,7 +234,7 @@ const aboutBoxLeaveListener = function () {
 const aboutNavEnterListener = function () {
   aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
-  projectTitle.style.transform = "scale(1.02) translateY(-20%)";
+  projectTitle.style.transform = "scale(1.02) translateY(-30%)";
   aboutTitle.style.backgroundColor = "#385464";
   aboutTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
   aboutBox.style.transform = "scale(1.02)";
@@ -293,7 +293,7 @@ const experienceBoxLeaveListener = function () {
 const experienceNavEnterListener = function () {
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
   aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
-  projectTitle.style.transform = "scale(1.02) translateY(-20%)";
+  projectTitle.style.transform = "scale(1.02) translateY(-30%)";
   experienceTitle.style.backgroundColor = "#30526B";
   experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
   experienceBox.style.transform = "scale(1.02)";
@@ -316,7 +316,7 @@ const experienceNavLeaveListener = function () {
 
 const projectBoxEnterListener = function () {
   customCursor.style.backgroundColor = "#C19DFF25";
-  projectTitle.style.transform = "scale(1.02) translateY(-20%)";
+  projectTitle.style.transform = "scale(1.02) translateY(-30%)";
   projectTitle.style.backgroundColor = "#3D4D6B";
   projectTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
   projectBox.style.transform = "scale(1.02)";
@@ -352,7 +352,7 @@ const projectBoxLeaveListener = function () {
 };
 
 const projectsNavEnterListener = function () {
-  projectTitle.style.transform = "scale(1.02) translateY(-20%)";
+  projectTitle.style.transform = "scale(1.02) translateY(-30%)";
   aboutTitle.style.transform = "scale(1.02) translateY(-12%)";
   experienceTitle.style.transform = "scale(1.02) translateY(-20%)";
   projectTitle.style.backgroundColor = "#3D4D6B";
@@ -408,9 +408,13 @@ const removeEffectsFunc = function () {
 const handleWindowResize = function () {
   let windowWidth = window.innerWidth;
   if (windowWidth <= 1000) {
-    window.location.reload();
+    removeEffectsFunc();
+  } else {
+    addEffectsFunc();
   }
 };
+
+handleWindowResize();
 
 window.addEventListener("resize", handleWindowResize);
 
