@@ -1,3 +1,15 @@
+// Down Arrow for All Projects //
+
+const arrowDown = document.getElementById("arrow-down");
+
+function handleScroll() {
+  arrowDown.style.display = "none";
+}
+
+window.addEventListener("scroll", handleScroll);
+
+// End Down Arrow for All Projects //
+
 // Cursor and Blob Effect //
 
 const cursor = document.querySelector(".custom-cursor");
@@ -31,6 +43,46 @@ document.addEventListener("mousemove", (e) => {
 });
 
 // End Cursor and Blob Effect //
+
+// Tilt Effect //
+
+let constrain = 1100;
+let mainBody = document.getElementById("tilt-backlayer");
+let tiltLayers = document.querySelectorAll(".tilt-layer");
+
+mainBody.addEventListener("mousemove", function (e) {
+  let windowWidth = window.innerWidth;
+
+  // Check if window width is above 1000px
+  if (windowWidth > 1000) {
+    tiltLayers.forEach((layer) => {
+      let box = layer.getBoundingClientRect();
+      let xy = [e.clientX, e.clientY];
+      let calcX = -(xy[1] - box.y - box.height / 2) / constrain;
+      let calcY = (xy[0] - box.x - box.width / 2) / constrain;
+
+      if (layer.contains(e.target)) {
+        layer.style.transform =
+          "scale(1.02) " +
+          "perspective(150px) " +
+          "rotateX(" +
+          calcX +
+          "deg) " +
+          "rotateY(" +
+          calcY +
+          "deg)";
+      } else {
+        layer.style.transform = "";
+      }
+    });
+  } else {
+    tiltLayers.forEach((layer) => {
+      layer.style.transform = "";
+    });
+  }
+});
+
+// End Tilt Effect //
 
 // Name Wave Effect //
 
@@ -147,46 +199,6 @@ function letsParty() {
 }
 
 // End Party Mode //
-
-// Tilt Effect //
-
-let constrain = 1100;
-let mainBody = document.getElementById("tilt-backlayer");
-let tiltLayers = document.querySelectorAll(".tilt-layer");
-
-mainBody.addEventListener("mousemove", function (e) {
-  let windowWidth = window.innerWidth;
-
-  // Check if window width is above 1000px
-  if (windowWidth > 1000) {
-    tiltLayers.forEach((layer) => {
-      let box = layer.getBoundingClientRect();
-      let xy = [e.clientX, e.clientY];
-      let calcX = -(xy[1] - box.y - box.height / 2) / constrain;
-      let calcY = (xy[0] - box.x - box.width / 2) / constrain;
-
-      if (layer.contains(e.target)) {
-        layer.style.transform =
-          "scale(1.02) " +
-          "perspective(150px) " +
-          "rotateX(" +
-          calcX +
-          "deg) " +
-          "rotateY(" +
-          calcY +
-          "deg)";
-      } else {
-        layer.style.transform = "";
-      }
-    });
-  } else {
-    tiltLayers.forEach((layer) => {
-      layer.style.transform = "";
-    });
-  }
-});
-
-// End Tilt Effect //
 
 // Hover On Sections Effect //
 
