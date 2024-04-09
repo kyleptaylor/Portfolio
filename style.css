@@ -218,10 +218,10 @@ body {
     z-index: -1;
     position: fixed;
     border-radius: 50%;
-    height: 500px;
-    width: 500px;
+    height: 600px;
+    width: 600px;
     background-color: #34f5c525;
-    filter: blur(60px);
+    filter: blur(75px);
     pointer-events: none; /* Allow interaction with underlying elements */
     transform: translate(-50%, -50%);
     transition: width 0s ease, height 0s ease;
