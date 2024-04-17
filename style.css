@@ -493,11 +493,14 @@ a {
 /* Social Icons */
 
 .social-icons {
-  padding: 0px 0px 0px;
+  padding: 0px;
+  user-select: none;
 }
 
 .icon-button {
-  padding-right: 20px;
+  padding-right: 25px;
+  font-size: 1.75em;
+  display: inline-block;
   color: #eeeeee;
 }
 
