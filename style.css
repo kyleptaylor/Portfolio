@@ -527,14 +527,14 @@ a {
 }
 
 .switch-box p {
-  padding: 0 20px;
+  padding-right: 15px;
 }
 
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 34px;
+  width: 56px;
+  height: 30px;
 }
 
 .switch input {
@@ -556,11 +556,15 @@ a {
   transition: 0.4s;
 }
 
+.switch:hover .slider {
+  background-color: #34f5c5;
+}
+
 .slider:before {
   position: absolute;
   content: "";
-  height: 26px;
-  width: 26px;
+  height: 22px;
+  width: 22px;
   left: 4px;
   bottom: 4px;
   background-color: #eeeeee;
