@@ -446,7 +446,6 @@ a {
 
   .header-box:hover {
     background-color: #34f5c525;
-    transform: scale(1.02);
   }
 }
 
@@ -740,7 +739,6 @@ a.redirect-link:last-child {
 @media screen and (min-width: 1000px) {
   #info-sections .about-box:hover {
     background-color: #34f5c525;
-    transform: scale(1.02);
   }
 }
 
@@ -1108,7 +1106,6 @@ a.redirect-link:last-child {
 @media screen and (min-width: 1000px) {
   #info-sections .experience-box:hover {
     background-color: #1dcdfe25;
-    transform: scale(1.02);
   }
 }
 
@@ -1144,7 +1141,6 @@ a.redirect-link:last-child {
   .experience:hover .experience-title .experience-role,
   .experience:hover .full-resume {
     color: #1dcdfe;
-    text-shadow: #1dcdfe99 0px 0px 5px;
   }
 }
 
@@ -1263,7 +1259,6 @@ hr.experience-divider {
 @media screen and (min-width: 1000px) {
   #info-sections .project-box:hover {
     background-color: #c19dff25;
-    transform: scale(1.02);
   }
 }
 
@@ -1299,7 +1294,6 @@ hr.experience-divider {
   .project:hover .project-info .project-title,
   .project:hover .see-all-projects {
     color: #c19dff;
-    text-shadow: #c19dff99 0px 0px 5px;
   }
 }
 
