@@ -13,11 +13,22 @@ window.addEventListener("scroll", handleScroll);
 // Cursor and Blob Effect //
 
 const cursor = document.querySelector(".custom-cursor");
+const secretMessage = document.querySelector(".secret-message");
 const blobs = document.querySelectorAll(".blob");
+
+const switchBox = document.querySelector(".switch-box");
+switchBox.addEventListener("mouseenter", () => {
+  secretMessage.style.display = "block";
+});
+switchBox.addEventListener("mouseleave", () => {
+  secretMessage.style.display = "";
+});
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
+  secretMessage.style.left = e.clientX + "px";
+  secretMessage.style.top = e.clientY + "px";
   let windowWidth = window.innerWidth;
 
   // Check if window width is above 1000px

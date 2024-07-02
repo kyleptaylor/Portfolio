@@ -223,9 +223,41 @@ body {
     width: 600px;
     background-color: #34f5c525;
     filter: blur(75px);
-    pointer-events: none; /* Allow interaction with underlying elements */
+    pointer-events: none;
     transform: translate(-50%, -50%);
     transition: width 0s ease, height 0s ease;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .secret-message {
+    position: fixed;
+    z-index: 1;
+    transform: translate(20px, 20px);
+    transition: width 0s ease, height 0s ease;
+    display: none;
+  }
+
+  .secret-message p {
+    color: #ffffff;
+    font-size: 3em;
+    transform: scaleX(-1);
+    animation: flip 1.5s infinite;
+  }
+
+  @keyframes flip {
+    0% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(-1);
+    }
+    75% {
+      transform: scaleX(1);
+    }
+    100% {
+      transform: scaleX(1);
+    }
   }
 }
 
