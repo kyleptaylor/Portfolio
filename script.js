@@ -257,7 +257,7 @@ const experienceBoxEnterListener = function () {
   customCursor.style.backgroundColor = "#1DCDFE25";
   experienceTitle.style.backgroundColor = "#30526B";
   experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  overlay.style.opacity = "0.5";
+  overlay.style.opacity = "1";
   experienceBox.style.zIndex = "4";
   experienceTitle.style.zIndex = "4";
   if (!partyModeCheckbox.checked) {
