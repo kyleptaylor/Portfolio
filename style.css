@@ -12,11 +12,6 @@ body {
 
 /* Background */
 
-#disco-ball {
-  display: none;
-  pointer-events: none;
-}
-
 @keyframes bounceIn {
   0% {
     top: -50%;
@@ -48,8 +43,35 @@ body {
   }
 }
 
+#disco-ball {
+  width: 150px;
+  height: 150px;
+  position: fixed;
+  display: block;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+#disco-ball.show {
+  animation-name: bounceIn;
+}
+
+#disco-ball:not(.show) {
+  animation-name: slideOut;
+}
+
+.background {
+  display: none;
+}
+
 @media screen and (min-width: 1000px) {
   .background {
+    display: block;
     overflow: hidden;
     position: fixed;
     top: 0;
@@ -58,28 +80,6 @@ body {
     width: 100%;
     z-index: -1;
     background: transparent;
-  }
-
-  #disco-ball {
-    width: 150px;
-    height: 150px;
-    position: fixed;
-    display: block;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-    animation-duration: 1s;
-    animation-fill-mode: both;
-    animation-timing-function: ease-in-out;
-  }
-
-  #disco-ball.show {
-    animation-name: bounceIn;
-  }
-
-  #disco-ball:not(.show) {
-    animation-name: slideOut;
   }
 
   .blob {
@@ -229,35 +229,32 @@ body {
   }
 }
 
-@media screen and (min-width: 1000px) {
-  .secret-message {
-    position: fixed;
-    z-index: 1;
-    transform: translate(20px, 20px);
-    transition: width 0s ease, height 0s ease;
-    display: none;
-  }
+.secret-message {
+  position: fixed;
+  z-index: 1;
+  transform: translate(20px, 20px);
+  transition: width 0s ease, height 0s ease;
+  display: none;
+}
 
-  .secret-message p {
-    color: #ffffff;
-    font-size: 3em;
+.secret-message p {
+  color: #ffffff;
+  font-size: 3em;
+  animation: flip 1.5s infinite;
+}
+
+@keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
     transform: scaleX(-1);
-    animation: flip 1.5s infinite;
   }
-
-  @keyframes flip {
-    0% {
-      transform: scaleX(1);
-    }
-    50% {
-      transform: scaleX(-1);
-    }
-    75% {
-      transform: scaleX(1);
-    }
-    100% {
-      transform: scaleX(1);
-    }
+  75% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaleX(1);
   }
 }
 
