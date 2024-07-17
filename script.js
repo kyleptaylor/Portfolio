@@ -153,63 +153,61 @@ window.addEventListener("load", function () {
 
 // Party Mode //
 
-if (document.getElementById("party-mode")) {
-  const partyModeCheckbox = document.getElementById("party-mode");
-  const discoBall = document.getElementById("disco-ball");
-  discoBall.style.display = "none";
-  let colorInterval;
+const partyModeCheckbox = document.getElementById("party-mode");
+const discoBall = document.getElementById("disco-ball");
+discoBall.style.display = "none";
+let colorInterval;
 
-  function stopColorChange() {
-    clearInterval(colorInterval);
+function stopColorChange() {
+  clearInterval(colorInterval);
+  blobs.forEach((blob) => {
+    blob.style.backgroundColor = "#34f5c520";
+  });
+}
+
+partyModeCheckbox.addEventListener("change", function () {
+  if (partyModeCheckbox.checked) {
+    letsParty();
+    discoBall.style.display = "block";
+    discoBall.classList.add("show");
+  } else {
+    stopColorChange();
+    discoBall.classList.remove("show");
+  }
+});
+
+function letsParty() {
+  stopColorChange();
+  const neonColors = [
+    "#ff00ff20",
+    "#00ffff20",
+    "#ff00aa20",
+    "#00ff0020",
+    "#ffff0020",
+    "#ff008820",
+    "#ff770020",
+    "#00ff7720",
+    "#ff005520",
+    "#00ffaa20",
+    "#ff770020",
+    "#00aaff20",
+    "#ffaa0020",
+    "#00ff5520",
+    "#ff00ff20",
+    "#ff880020",
+  ];
+
+  function assignRandomColors() {
     blobs.forEach((blob) => {
-      blob.style.backgroundColor = "#34f5c520";
+      const randomColor =
+        neonColors[Math.floor(Math.random() * neonColors.length)];
+      blob.style.backgroundColor = randomColor;
     });
   }
 
-  partyModeCheckbox.addEventListener("change", function () {
-    if (partyModeCheckbox.checked) {
-      letsParty();
-      discoBall.style.display = "block";
-      discoBall.classList.add("show");
-    } else {
-      stopColorChange();
-      discoBall.classList.remove("show");
-    }
-  });
+  assignRandomColors(); // Call it once to set initial colors
 
-  function letsParty() {
-    stopColorChange();
-    const neonColors = [
-      "#ff00ff20",
-      "#00ffff20",
-      "#ff00aa20",
-      "#00ff0020",
-      "#ffff0020",
-      "#ff008820",
-      "#ff770020",
-      "#00ff7720",
-      "#ff005520",
-      "#00ffaa20",
-      "#ff770020",
-      "#00aaff20",
-      "#ffaa0020",
-      "#00ff5520",
-      "#ff00ff20",
-      "#ff880020",
-    ];
-
-    function assignRandomColors() {
-      blobs.forEach((blob) => {
-        const randomColor =
-          neonColors[Math.floor(Math.random() * neonColors.length)];
-        blob.style.backgroundColor = randomColor;
-      });
-    }
-
-    assignRandomColors(); // Call it once to set initial colors
-
-    colorInterval = setInterval(assignRandomColors, 1000);
-  }
+  colorInterval = setInterval(assignRandomColors, 1000);
 }
 
 // End Party Mode //
