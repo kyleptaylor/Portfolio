@@ -16,13 +16,15 @@ const cursor = document.querySelector(".custom-cursor");
 const secretMessage = document.querySelector(".secret-message");
 const blobs = document.querySelectorAll(".blob");
 
-const switchBox = document.querySelector(".switch-box");
-switchBox.addEventListener("mouseenter", () => {
-  secretMessage.style.display = "block";
-});
-switchBox.addEventListener("mouseleave", () => {
-  secretMessage.style.display = "";
-});
+if (document.querySelector(".switch-box")) {
+  const switchBox = document.querySelector(".switch-box");
+  switchBox.addEventListener("mouseenter", () => {
+    secretMessage.style.display = "block";
+  });
+  switchBox.addEventListener("mouseleave", () => {
+    secretMessage.style.display = "";
+  });
+}
 
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
@@ -58,7 +60,7 @@ document.addEventListener("mousemove", (e) => {
 // Tilt Effect //
 
 let constrain = 1100;
-let mainBody = document.getElementById("tilt-backlayer");
+let mainBody = document.querySelector(".tilt-backlayer");
 let tiltLayers = document.querySelectorAll(".tilt-layer");
 
 mainBody.addEventListener("mousemove", function (e) {
@@ -151,61 +153,63 @@ window.addEventListener("load", function () {
 
 // Party Mode //
 
-const partyModeCheckbox = document.getElementById("party-mode");
-const discoBall = document.getElementById("disco-ball");
-discoBall.style.display = "none";
-let colorInterval;
+if (document.getElementById("party-mode")) {
+  const partyModeCheckbox = document.getElementById("party-mode");
+  const discoBall = document.getElementById("disco-ball");
+  discoBall.style.display = "none";
+  let colorInterval;
 
-function stopColorChange() {
-  clearInterval(colorInterval);
-  blobs.forEach((blob) => {
-    blob.style.backgroundColor = "#34f5c520";
-  });
-}
-
-partyModeCheckbox.addEventListener("change", function () {
-  if (partyModeCheckbox.checked) {
-    letsParty();
-    discoBall.style.display = "block";
-    discoBall.classList.add("show");
-  } else {
-    stopColorChange();
-    discoBall.classList.remove("show");
-  }
-});
-
-function letsParty() {
-  stopColorChange();
-  const neonColors = [
-    "#ff00ff20",
-    "#00ffff20",
-    "#ff00aa20",
-    "#00ff0020",
-    "#ffff0020",
-    "#ff008820",
-    "#ff770020",
-    "#00ff7720",
-    "#ff005520",
-    "#00ffaa20",
-    "#ff770020",
-    "#00aaff20",
-    "#ffaa0020",
-    "#00ff5520",
-    "#ff00ff20",
-    "#ff880020",
-  ];
-
-  function assignRandomColors() {
+  function stopColorChange() {
+    clearInterval(colorInterval);
     blobs.forEach((blob) => {
-      const randomColor =
-        neonColors[Math.floor(Math.random() * neonColors.length)];
-      blob.style.backgroundColor = randomColor;
+      blob.style.backgroundColor = "#34f5c520";
     });
   }
 
-  assignRandomColors(); // Call it once to set initial colors
+  partyModeCheckbox.addEventListener("change", function () {
+    if (partyModeCheckbox.checked) {
+      letsParty();
+      discoBall.style.display = "block";
+      discoBall.classList.add("show");
+    } else {
+      stopColorChange();
+      discoBall.classList.remove("show");
+    }
+  });
 
-  colorInterval = setInterval(assignRandomColors, 1000);
+  function letsParty() {
+    stopColorChange();
+    const neonColors = [
+      "#ff00ff20",
+      "#00ffff20",
+      "#ff00aa20",
+      "#00ff0020",
+      "#ffff0020",
+      "#ff008820",
+      "#ff770020",
+      "#00ff7720",
+      "#ff005520",
+      "#00ffaa20",
+      "#ff770020",
+      "#00aaff20",
+      "#ffaa0020",
+      "#00ff5520",
+      "#ff00ff20",
+      "#ff880020",
+    ];
+
+    function assignRandomColors() {
+      blobs.forEach((blob) => {
+        const randomColor =
+          neonColors[Math.floor(Math.random() * neonColors.length)];
+        blob.style.backgroundColor = randomColor;
+      });
+    }
+
+    assignRandomColors(); // Call it once to set initial colors
+
+    colorInterval = setInterval(assignRandomColors, 1000);
+  }
 }
 
 // End Party Mode //
