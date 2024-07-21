@@ -508,6 +508,13 @@ a {
   background-position: center;
 }
 
+@media screen and (max-width: 419px) {
+  .avatar-image-circle {
+    height: 60px;
+    width: 60px;
+  }
+}
+
 @media screen and (max-width: 375px) {
   .avatar-image-circle {
     height: 55px;
