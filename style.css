@@ -583,16 +583,6 @@ a {
   }
 }
 
-.switch-box .mobile-party {
-  display: none;
-}
-
-@media screen and (max-width: 500px) {
-  .switch-box .mobile-party {
-    display: block;
-  }
-}
-
 .switch {
   position: relative;
   display: inline-block;
@@ -619,8 +609,10 @@ a {
   transition: 0.4s;
 }
 
-.switch:hover .slider {
-  background-color: #34f5c5;
+@media screen and (min-width: 501px) {
+  .switch:hover .slider {
+    background-color: #34f5c5;
+  }
 }
 
 .slider:before {

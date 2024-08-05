@@ -16,7 +16,7 @@ const cursor = document.querySelector(".custom-cursor");
 const secretMessage = document.querySelector(".secret-message");
 const blobs = document.querySelectorAll(".blob");
 
-if (document.querySelector(".switch")) {
+if (document.querySelector(".switch") && window.innerWidth > 1000) {
   const switchBox = document.querySelector(".switch");
   switchBox.addEventListener("mouseenter", () => {
     secretMessage.style.display = "block";
