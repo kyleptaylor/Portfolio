@@ -573,14 +573,24 @@ a {
   justify-content: center;
 }
 
-@media screen and (max-width: 1000px) {
-  .switch-box {
+.switch-box p {
+  padding-right: 15px;
+}
+
+@media screen and (max-width: 500px) {
+  .switch-box p {
     display: none;
   }
 }
 
-.switch-box p {
-  padding-right: 15px;
+.switch-box .mobile-party {
+  display: none;
+}
+
+@media screen and (max-width: 500px) {
+  .switch-box .mobile-party {
+    display: block;
+  }
 }
 
 .switch {
