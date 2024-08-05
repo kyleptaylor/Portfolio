@@ -16,8 +16,8 @@ const cursor = document.querySelector(".custom-cursor");
 const secretMessage = document.querySelector(".secret-message");
 const blobs = document.querySelectorAll(".blob");
 
-if (document.querySelector(".switch-box")) {
-  const switchBox = document.querySelector(".switch-box");
+if (document.querySelector(".switch")) {
+  const switchBox = document.querySelector(".switch");
   switchBox.addEventListener("mouseenter", () => {
     secretMessage.style.display = "block";
   });
@@ -214,25 +214,44 @@ function letsParty() {
 
 // Hover On Sections Effect //
 
-const aboutTitle = document.getElementById("about");
 const aboutBox = document.querySelector(".about-box");
 const downArrow = document.getElementById("hover-arrow-down");
-const experienceTitle = document.getElementById("experience");
 const experienceBox = document.querySelector(".experience-box");
-const projectTitle = document.getElementById("projects");
 const projectBox = document.querySelector(".project-box");
 const customCursor = document.querySelector(".custom-cursor");
 const aboutNav = document.querySelector(".nav-about");
 const experienceNav = document.querySelector(".nav-experience");
 const projectsNav = document.querySelector(".nav-projects");
-const overlay = document.querySelector(".overlay");
+
+// Nav Changes //
+
+const aboutNavEnterListener = function () {
+  aboutBox.style.backgroundColor = "#34F5C515";
+};
+
+const aboutNavLeaveListener = function () {
+  aboutBox.style.backgroundColor = "";
+};
+
+const experienceNavEnterListener = function () {
+  experienceBox.style.backgroundColor = "#1DCDFE15";
+};
+
+const experienceNavLeaveListener = function () {
+  experienceBox.style.backgroundColor = "";
+};
+
+const projectsNavEnterListener = function () {
+  projectBox.style.backgroundColor = "#C19DFF15";
+};
+
+const projectsNavLeaveListener = function () {
+  projectBox.style.backgroundColor = "";
+};
+
+// Info box Changes //
 
 const aboutBoxEnterListener = function () {
-  aboutTitle.style.backgroundColor = "#385464";
-  aboutTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  overlay.style.opacity = "1";
-  aboutBox.style.zIndex = "4";
-  aboutTitle.style.zIndex = "4";
   downArrow.style.display = "block";
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
@@ -242,37 +261,11 @@ const aboutBoxEnterListener = function () {
 };
 
 const aboutBoxLeaveListener = function () {
-  aboutTitle.style.transform = "";
-  aboutTitle.style.backgroundColor = "";
-  aboutTitle.style.boxShadow = "";
-  overlay.style.opacity = "";
-  aboutBox.style.zIndex = "";
-  aboutTitle.style.zIndex = "";
   downArrow.style.display = "";
-  if (partyModeCheckbox.checked) {
-    letsParty();
-  }
-};
-
-const aboutNavEnterListener = function () {
-  aboutTitle.style.backgroundColor = "#385464";
-  aboutTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  aboutBox.style.backgroundColor = "#34F5C515";
-};
-
-const aboutNavLeaveListener = function () {
-  aboutTitle.style.backgroundColor = "";
-  aboutTitle.style.boxShadow = "";
-  aboutBox.style.backgroundColor = "";
 };
 
 const experienceBoxEnterListener = function () {
   customCursor.style.backgroundColor = "#1DCDFE25";
-  experienceTitle.style.backgroundColor = "#30526B";
-  experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  overlay.style.opacity = "1";
-  experienceBox.style.zIndex = "4";
-  experienceTitle.style.zIndex = "4";
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
       blob.style.background = "#1DCDFE30";
@@ -282,15 +275,6 @@ const experienceBoxEnterListener = function () {
 
 const experienceBoxLeaveListener = function () {
   customCursor.style.backgroundColor = "";
-  experienceTitle.style.backgroundColor = "";
-  experienceTitle.style.boxShadow = "";
-  experienceBox.style.backgroundColor = "";
-  overlay.style.opacity = "";
-  experienceBox.style.zIndex = "";
-  experienceTitle.style.zIndex = "";
-  if (partyModeCheckbox.checked) {
-    letsParty();
-  }
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
       blob.style.background = "";
@@ -298,26 +282,8 @@ const experienceBoxLeaveListener = function () {
   }
 };
 
-const experienceNavEnterListener = function () {
-  experienceTitle.style.backgroundColor = "#30526B";
-  experienceTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  experienceBox.style.backgroundColor = "#1DCDFE15";
-};
-
-const experienceNavLeaveListener = function () {
-  experienceTitle.style.backgroundColor = "";
-  experienceTitle.style.boxShadow = "";
-  experienceBox.style.backgroundColor = "";
-};
-
 const projectBoxEnterListener = function () {
   customCursor.style.backgroundColor = "#C19DFF25";
-  projectTitle.style.backgroundColor = "#3D4D6B";
-  projectTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  projectBox.style.backgroundColor = "#C19DFF20";
-  overlay.style.opacity = "1";
-  projectBox.style.zIndex = "4";
-  projectTitle.style.zIndex = "4";
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
       blob.style.background = "#C19DFF25";
@@ -327,32 +293,11 @@ const projectBoxEnterListener = function () {
 
 const projectBoxLeaveListener = function () {
   customCursor.style.backgroundColor = "";
-  projectTitle.style.backgroundColor = "";
-  projectTitle.style.boxShadow = "";
-  projectBox.style.backgroundColor = "";
-  overlay.style.opacity = "";
-  projectBox.style.zIndex = "";
-  projectTitle.style.zIndex = "";
-  if (partyModeCheckbox.checked) {
-    letsParty();
-  }
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
       blob.style.background = "";
     });
   }
-};
-
-const projectsNavEnterListener = function () {
-  projectTitle.style.backgroundColor = "#3D4D6B";
-  projectTitle.style.boxShadow = "#ffffff99 0px 0px 8px";
-  projectBox.style.backgroundColor = "#C19DFF15";
-};
-
-const projectsNavLeaveListener = function () {
-  projectTitle.style.backgroundColor = "";
-  projectTitle.style.boxShadow = "";
-  projectBox.style.backgroundColor = "";
 };
 
 const addEffectsFunc = function () {
