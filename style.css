@@ -553,8 +553,12 @@ a {
 
 .icon-button:hover {
   color: #34f5c5;
-  transform: scale(1.1);
+  transform: scale(1.075);
   text-shadow: #21d0b2 0px 0px 8px;
+}
+
+.icon-button:active {
+  transform: scale(0.95);
 }
 
 /* End Social Icons */
@@ -655,6 +659,12 @@ input:checked + .slider:before {
   padding-top: 30px;
   padding-left: 0;
   margin: 0;
+  gap: 25px;
+}
+
+.nav-box .nav-items a {
+  flex: 1;
+  text-align: center;
 }
 
 .nav-box .nav-items .nav-item {
@@ -669,7 +679,11 @@ input:checked + .slider:before {
 
 .nav-box .nav-items .nav-item:hover {
   border-radius: 10px;
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+.nav-box .nav-items .nav-item:active {
+  transform: scale(0.95);
 }
 
 .header-box .nav-box .nav-items .nav-about:hover {
@@ -693,6 +707,8 @@ input:checked + .slider:before {
 .nav-box .nav-items .nav-item i {
   visibility: hidden;
   position: absolute;
+  right: -10px;
+  top: 0;
   transition: transform 0.2s ease-in-out;
   transform: rotate(-40deg);
 }
@@ -711,7 +727,7 @@ input:checked + .slider:before {
 
 .nav-box .nav-items .nav-item:hover i {
   visibility: visible;
-  transform: translate(10px, -15px) rotate(-40deg);
+  transform: translate(5px, -8px) rotate(-40deg);
 }
 
 @media screen and (max-width: 1000px) {
@@ -1527,9 +1543,9 @@ hr.project-divider {
   margin: 25px 21px 0;
   text-align: center;
   position: relative;
-  background-color: rgb(47, 69, 92);
   border-radius: 10px;
   border: 1px solid #ffffff;
+  box-shadow: #ffffff60 0px 0px 8px;
 }
 
 .all-projects-title h2 {
