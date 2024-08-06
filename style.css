@@ -1630,7 +1630,13 @@ hr.project-divider {
   }
 }
 
+.all-project-box .redirect-box {
+  flex-grow: 1;
+  display: flex;
+}
+
 .all-project-block {
+  flex-grow: 1;
   padding: 25px;
   display: flex;
   flex-direction: column;
@@ -1659,16 +1665,13 @@ hr.project-divider {
 }
 
 .all-project-block .nav-box {
+  margin-top: auto;
   width: 100%;
 }
 
 .all-project-block .nav-box .nav-items {
-  justify-content: left;
   padding-top: 10px;
-}
-
-.all-project-block .nav-box .nav-items .nav-item {
-  margin-right: 30px;
+  gap: 40px;
 }
 
 .all-project-block .nav-box .nav-items .nav-projects:hover {
