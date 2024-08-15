@@ -10,6 +10,29 @@ window.addEventListener("scroll", handleScroll);
 
 // End Down Arrow for All Projects //
 
+// Glide Into View Effect For All Projects //
+
+document.addEventListener("DOMContentLoaded", function () {
+  const boxes = document.querySelectorAll(".glide-in");
+
+  function reveal() {
+    const verticalEdge = window.scrollY + window.innerHeight;
+
+    boxes.forEach((box) => {
+      const boxTop = box.getBoundingClientRect().top + window.scrollY;
+
+      if (verticalEdge >= boxTop + 25) {
+        box.classList.add("animate");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
+});
+
+// End Glide Into View Effect For All Projects //
+
 // Cursor and Blob Effect //
 
 const cursor = document.querySelector(".custom-cursor");

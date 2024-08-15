@@ -689,7 +689,7 @@ input:checked + .slider:before {
 @media screen and (min-width: 501px) {
   .nav-box .nav-items .nav-item:hover {
     border-radius: 10px;
-    transform: scale(1.05);
+    transform: scale(1.025);
   }
 
   .header-box .nav-box .nav-items .nav-about:hover {
@@ -712,7 +712,7 @@ input:checked + .slider:before {
 }
 
 .nav-box .nav-items .nav-item:active {
-  transform: scale(0.95);
+  transform: scale(0.925);
 }
 
 .nav-box .nav-items .nav-item i {
@@ -1604,11 +1604,32 @@ hr.project-divider {
   z-index: 4;
 }
 
-.all-project-box {
+.glide-in {
+  display: flex;
   width: 48.25%;
   z-index: 2;
   margin: 20px 0px 65px;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease 0.25s;
+}
+
+@media screen and (max-width: 1000px) {
+  .glide-in {
+    height: 100%;
+    width: auto;
+    margin: 20px;
+  }
+}
+
+.glide-in.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.all-project-box {
   display: flex;
+  flex-grow: 1;
   flex-direction: column;
   border: 1px solid #c19dff;
   border-radius: 10px;
@@ -1623,10 +1644,7 @@ hr.project-divider {
 
 @media screen and (max-width: 1000px) {
   .all-project-box {
-    height: 100%;
-    width: auto;
     padding: 15px;
-    margin: 20px;
   }
 }
 
