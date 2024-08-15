@@ -1604,22 +1604,25 @@ hr.project-divider {
   z-index: 4;
 }
 
-.glide-in {
+.all-project-box-wrapper {
   display: flex;
   width: 48.25%;
   z-index: 2;
   margin: 20px 0px 65px;
-  opacity: 0;
-  transform: translateY(100px);
-  transition: all 0.5s ease 0.25s;
 }
 
 @media screen and (max-width: 1000px) {
-  .glide-in {
+  .all-project-box-wrapper {
     height: 100%;
     width: auto;
     margin: 20px;
   }
+}
+
+.glide-in {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.5s ease 0.25s;
 }
 
 .glide-in.animate {
@@ -1690,6 +1693,12 @@ hr.project-divider {
 .all-project-block .nav-box .nav-items {
   padding-top: 10px;
   gap: 40px;
+}
+
+@media screen and (max-width: 1000px) {
+  .all-project-block .nav-box .nav-items {
+    gap: 20px;
+  }
 }
 
 .all-project-block .nav-box .nav-items .nav-projects:hover {
