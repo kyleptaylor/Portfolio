@@ -1248,10 +1248,10 @@ a.redirect-link:last-child {
     background-color: #00000040;
   }
 
-  .experience:hover .experience-title .experience-role,
+  /* .experience:hover .experience-title .experience-role,
   .experience:hover .full-resume {
     color: #1dcdfe;
-  }
+  } */
 }
 
 .experience-title {
@@ -1401,10 +1401,10 @@ hr.experience-divider {
     background-color: #00000040;
   }
 
-  .project:hover .project-info .project-title,
+  /* .project:hover .project-info .project-title,
   .project:hover .see-all-projects {
     color: #c19dff;
-  }
+  } */
 }
 
 .project-block {
