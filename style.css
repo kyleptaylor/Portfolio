@@ -231,23 +231,32 @@ body {
   }
 }
 
-.secret-message {
-  position: fixed;
-  z-index: 1;
-  transform: translate(20px, 20px);
-  transition:
-    width 0s ease,
-    height 0s ease;
+.secret-message img {
   display: none;
 }
 
-.secret-message p {
-  color: #ffffff;
+@media screen and (min-width: 1000px) {
+  .secret-message {
+    position: fixed;
+    z-index: 5;
+    transform: translate(50px, 50px);
+    transition:
+      top 0s ease-out,
+      left 0s ease-out;
+    display: none;
+  }
+
+  .secret-message img {
+    display: block;
+    width: 100px;
+    height: auto;
+    /* color: #ffffff;
   font-size: 3em;
-  animation: flip 1.5s infinite;
+  animation: flip 1.8s infinite; */
+  }
 }
 
-@keyframes flip {
+/* @keyframes flip {
   0% {
     transform: scaleX(1);
   }
@@ -260,7 +269,7 @@ body {
   100% {
     transform: scaleX(1);
   }
-}
+} */
 
 /* Scroll Bar */
 

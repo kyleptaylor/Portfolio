@@ -39,21 +39,13 @@ const cursor = document.querySelector(".custom-cursor");
 const secretMessage = document.querySelector(".secret-message");
 const blobs = document.querySelectorAll(".blob");
 
-if (document.querySelector(".switch") && window.innerWidth > 1000) {
-  const switchBox = document.querySelector(".switch");
-  switchBox.addEventListener("mouseenter", () => {
-    secretMessage.style.display = "block";
-  });
-  switchBox.addEventListener("mouseleave", () => {
-    secretMessage.style.display = "";
-  });
-}
-
 document.addEventListener("mousemove", (e) => {
   cursor.style.left = e.clientX + "px";
   cursor.style.top = e.clientY + "px";
-  secretMessage.style.left = e.clientX + "px";
-  secretMessage.style.top = e.clientY + "px";
+  setTimeout(function () {
+    secretMessage.style.left = e.clientX + "px";
+    secretMessage.style.top = e.clientY + "px";
+  }, 120);
   let windowWidth = window.innerWidth;
 
   // Check if window width is above 1000px
@@ -191,11 +183,13 @@ function stopColorChange() {
 partyModeCheckbox.addEventListener("change", function () {
   if (partyModeCheckbox.checked) {
     letsParty();
+    secretMessage.style.display = "block";
     discoBall.style.display = "block";
     discoBall.classList.add("show");
   } else {
     stopColorChange();
     discoBall.classList.remove("show");
+    secretMessage.style.display = "";
   }
 });
 
