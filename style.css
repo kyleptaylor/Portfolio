@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
   scroll-behavior: smooth;
 }
 
@@ -613,9 +613,9 @@ a {
   right: 0;
   bottom: 0;
   border: 1.4px solid #ffffff;
-  -webkit-transition: 0.4s;
+  -webkit-transition: inherit;
   -webkit-tap-highlight-color: transparent;
-  transition: 0.4s;
+  transition: inherit;
 }
 
 @media screen and (min-width: 501px) {
@@ -632,8 +632,8 @@ a {
   left: 4px;
   bottom: 4px;
   background-color: #ffffff;
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: inherit;
+  transition: inherit;
 }
 
 input:checked + .slider {
@@ -1631,7 +1631,10 @@ hr.project-divider {
 .glide-in {
   opacity: 0;
   transform: translateY(100px);
-  transition: all 0.5s ease 0.25s;
+  transition:
+    transform 0.5s,
+    opacity 1s,
+    background-color 0.3s ease;
 }
 
 .glide-in.animate {

@@ -236,35 +236,6 @@ const downArrow = document.getElementById("hover-arrow-down");
 const experienceBox = document.querySelector(".experience-box");
 const projectBox = document.querySelector(".project-box");
 const customCursor = document.querySelector(".custom-cursor");
-const aboutNav = document.querySelector(".nav-about");
-const experienceNav = document.querySelector(".nav-experience");
-const projectsNav = document.querySelector(".nav-projects");
-
-// Nav Changes //
-
-const aboutNavEnterListener = function () {
-  aboutBox.style.backgroundColor = "#34F5C515";
-};
-
-const aboutNavLeaveListener = function () {
-  aboutBox.style.backgroundColor = "";
-};
-
-const experienceNavEnterListener = function () {
-  experienceBox.style.backgroundColor = "#1DCDFE15";
-};
-
-const experienceNavLeaveListener = function () {
-  experienceBox.style.backgroundColor = "";
-};
-
-const projectsNavEnterListener = function () {
-  projectBox.style.backgroundColor = "#C19DFF15";
-};
-
-const projectsNavLeaveListener = function () {
-  projectBox.style.backgroundColor = "";
-};
 
 // Info box Changes //
 
@@ -320,31 +291,19 @@ const projectBoxLeaveListener = function () {
 const addEffectsFunc = function () {
   aboutBox.addEventListener("mouseenter", aboutBoxEnterListener);
   aboutBox.addEventListener("mouseleave", aboutBoxLeaveListener);
-  aboutNav.addEventListener("mouseenter", aboutNavEnterListener);
-  aboutNav.addEventListener("mouseleave", aboutNavLeaveListener);
   experienceBox.addEventListener("mouseenter", experienceBoxEnterListener);
   experienceBox.addEventListener("mouseleave", experienceBoxLeaveListener);
-  experienceNav.addEventListener("mouseenter", experienceNavEnterListener);
-  experienceNav.addEventListener("mouseleave", experienceNavLeaveListener);
   projectBox.addEventListener("mouseenter", projectBoxEnterListener);
   projectBox.addEventListener("mouseleave", projectBoxLeaveListener);
-  projectsNav.addEventListener("mouseenter", projectsNavEnterListener);
-  projectsNav.addEventListener("mouseleave", projectsNavLeaveListener);
 };
 
 const removeEffectsFunc = function () {
   aboutBox.removeEventListener("mouseenter", aboutBoxEnterListener);
   aboutBox.removeEventListener("mouseleave", aboutBoxLeaveListener);
-  aboutNav.removeEventListener("mouseenter", aboutNavEnterListener);
-  aboutNav.removeEventListener("mouseleave", aboutNavLeaveListener);
   experienceBox.removeEventListener("mouseenter", experienceBoxEnterListener);
   experienceBox.removeEventListener("mouseleave", experienceBoxLeaveListener);
-  experienceNav.removeEventListener("mouseenter", experienceNavEnterListener);
-  experienceNav.removeEventListener("mouseleave", experienceNavLeaveListener);
   projectBox.removeEventListener("mouseenter", projectBoxEnterListener);
   projectBox.removeEventListener("mouseleave", projectBoxLeaveListener);
-  projectsNav.removeEventListener("mouseenter", projectsNavEnterListener);
-  projectsNav.removeEventListener("mouseleave", projectsNavLeaveListener);
 };
 
 const handleWindowResize = function () {
