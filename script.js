@@ -1,12 +1,14 @@
 // Down Arrow for All Projects //
 
-const arrowDown = document.getElementById("arrow-down");
+if (document.getElementById("arrow-down")) {
+  const arrowDown = document.getElementById("arrow-down");
 
-function handleScroll() {
-  arrowDown.style.display = "none";
+  function handleScroll() {
+    arrowDown.style.display = "none";
+  }
+
+  window.addEventListener("scroll", handleScroll);
 }
-
-window.addEventListener("scroll", handleScroll);
 
 // End Down Arrow for All Projects //
 
