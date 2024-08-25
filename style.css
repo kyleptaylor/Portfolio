@@ -1617,7 +1617,7 @@ hr.project-divider {
   display: flex;
   width: 48.25%;
   z-index: 2;
-  margin: 20px 0px 65px;
+  margin: 20px 0px 25px;
 }
 
 @media screen and (max-width: 1000px) {

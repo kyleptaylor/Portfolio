@@ -92,14 +92,27 @@ mainBody.addEventListener("mousemove", function (e) {
       let calcY = (xy[0] - box.x - box.width / 2) / constrain;
 
       if (layer.contains(e.target)) {
-        layer.style.transform =
-          "perspective(150px) " +
-          "rotateX(" +
-          calcX +
-          "deg) " +
-          "rotateY(" +
-          calcY +
-          "deg)";
+        if (!layer.classList.contains("header-box")) {
+          // Disable scale for header box
+          layer.style.transform =
+            "scale(1.02)" +
+            "perspective(120px) " +
+            "rotateX(" +
+            calcX +
+            "deg) " +
+            "rotateY(" +
+            calcY +
+            "deg)";
+        } else {
+          layer.style.transform =
+            "perspective(120px) " +
+            "rotateX(" +
+            calcX +
+            "deg) " +
+            "rotateY(" +
+            calcY +
+            "deg)";
+        }
       } else {
         layer.style.transform = "";
       }
