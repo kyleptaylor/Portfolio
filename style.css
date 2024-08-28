@@ -471,6 +471,11 @@ a {
   }
 }
 
+.tilt-layer {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+
 .header-box {
   padding: 40px;
   margin: 20px;
@@ -1618,6 +1623,12 @@ hr.project-divider {
   width: 48.25%;
   z-index: 2;
   margin: 20px 0px 25px;
+}
+
+@media screen and (min-width: 1000px) {
+  .all-project-box-wrapper:hover {
+    transform: scale(1.02) !important;
+  }
 }
 
 @media screen and (max-width: 1000px) {
