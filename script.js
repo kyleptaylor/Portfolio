@@ -242,7 +242,7 @@ const customCursor = document.querySelector(".custom-cursor");
 // Info box Changes //
 
 const aboutBoxEnterListener = function () {
-  downArrow.style.display = "block";
+  downArrow.style.visibility = "visible";
   if (!partyModeCheckbox.checked) {
     blobs.forEach((blob) => {
       blob.style.background = "#34F5C525";
@@ -251,7 +251,7 @@ const aboutBoxEnterListener = function () {
 };
 
 const aboutBoxLeaveListener = function () {
-  downArrow.style.display = "";
+  downArrow.style.visibility = "";
 };
 
 const experienceBoxEnterListener = function () {
